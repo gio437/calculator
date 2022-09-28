@@ -1,0 +1,91 @@
+
+body {
+    height: 800px;
+  
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+
+button {
+   padding: 20px;
+   background-color: grey;
+   margin: 0;
+   font-size: 24px;
+   color: white;
+  /* border: 0;
+   border-width: 0.25px;
+   border-color: black;
+   */
+   width: 60px;
+   height: 70px;
+  
+}
+
+button:active {
+    background-color: white;
+}
+
+.text-box {
+    margin-left: 115px;
+    font-size: 50px;
+   
+    
+   
+}
+
+
+.numbers {
+    flex-wrap: wrap;
+    width: 250px; /* default is 140px */
+   font-size: 0;
+   
+}
+
+#zero {
+    width: 120px;
+    background-color: lightgrey;
+}
+
+#zero:active {
+    background-color: white;
+}
+
+.special {
+  font-size: 0;
+  margin-right: 10px;
+}
+
+.operators {
+   
+}
+
+
+#top-row {
+   
+}
+ #operator{
+    background-color: orange;
+    
+} 
+
+#operator:active {
+    background-color: white;
+}
+
+#numpad {
+    background-color: lightgrey;
+    
+}
+
+#numpad:active {
+    background-color: white;
+}
