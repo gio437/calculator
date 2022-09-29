@@ -84,7 +84,7 @@ button:active {
     background-color: white;
 }
 
-#numpad {
+.numpad {
     background-color: lightgrey;
     
 }

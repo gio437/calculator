@@ -36,7 +36,7 @@ const operate = function(name, num1, num2) {
 
 
     function clickNum() {
-        let pad = document.getElementById("numpad"); //store values in a array w ith querySelectorAll?
+        let pad = document.querySelector(".numpad"); //store values in a array w ith querySelectorAll?
         pad.addEventListener("click", displayValue);
 }
 
@@ -46,7 +46,7 @@ clickNum();
 
 
     function displayValue() {
-        let display = document.querySelector("text");
+        let display = document.querySelector(".text");
         
         let number = document.createElement("div");
         number.classList.add("number");
