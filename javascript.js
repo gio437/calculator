@@ -1,3 +1,7 @@
+let num = 0;
+
+
+
 const add = function(num1, num2) {
     return num1 + num2;
 };
@@ -28,3 +32,25 @@ const operate = function(name, num1, num2) {
 };
 
     console.log(operate(multiply, 3, 9));
+
+
+
+    function clickNum() {
+        let pad = document.getElementById("numpad"); //store values in a array w ith querySelectorAll?
+        pad.addEventListener("click", displayValue);
+}
+
+clickNum();
+
+
+
+
+    function displayValue() {
+        let display = document.querySelector("text");
+        
+        let number = document.createElement("div");
+        number.classList.add("number");
+        number.textContent = "9";
+
+        display.appendChild(number);
+    }
