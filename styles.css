@@ -1,7 +1,7 @@
 
 body {
     height: 800px;
-  
+    background-color: black;
 }
 
 .main {
@@ -35,10 +35,11 @@ button:active {
 }
 
 .text-box {
-    margin-left: 115px;
+    margin-right: 11px;
     font-size: 50px;
-   
-    
+   background-color: rgb(80, 79, 79);
+    color: white;
+   width: 240px;
    
 }
 
@@ -62,6 +63,8 @@ button:active {
 .special {
   font-size: 0;
   margin-right: 10px;
+  
+ 
 }
 
 .operators {
@@ -88,4 +91,9 @@ button:active {
 
 #numpad:active {
     background-color: white;
+}
+
+#text {
+    display: flex;
+    justify-content: flex-end;
 }
