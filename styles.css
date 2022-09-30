@@ -84,14 +84,102 @@ button:active {
     background-color: white;
 }
 
-.numpad {
+.numpad1 {
     background-color: lightgrey;
     
 }
 
-#numpad:active {
+.numpad2 {
+    background-color: lightgrey;
+    
+}
+
+.numpad3 {
+    background-color: lightgrey;
+    
+}
+
+.numpad4 {
+    background-color: lightgrey;
+    
+}
+
+.numpad5 {
+    background-color: lightgrey;
+    
+}
+
+.numpad6 {
+    background-color: lightgrey;
+    
+}
+
+
+.numpad7 {
+    background-color: lightgrey;
+    
+}
+
+
+.numpad8 {
+    background-color: lightgrey;
+    
+}
+
+
+.numpad9 {
+    background-color: lightgrey;
+    
+}
+
+.numpad10 {
+    background-color: lightgrey;
+    
+}
+
+
+
+
+#numpad1:active {
     background-color: white;
 }
+
+#numpad2:active {
+    background-color: white;
+}
+
+#numpad3:active {
+    background-color: white;
+}
+
+#numpad4:active {
+    background-color: white;
+}
+
+#numpad5:active {
+    background-color: white;
+}
+
+#numpad6:active {
+    background-color: white;
+}
+
+#numpad7:active {
+    background-color: white;
+}
+
+#numpad8:active {
+    background-color: white;
+}
+
+#numpad9:active {
+    background-color: white;
+}
+
+#numpad10:active {
+    background-color: white;
+}
+
 
 .text {
     display: flex;
