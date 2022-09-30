@@ -1,7 +1,7 @@
 
 body {
     height: 800px;
-    
+    background-color: gray;
 }
 
 .main {
@@ -48,7 +48,7 @@ button:active {
     flex-wrap: wrap;
     width: 250px; /* default is 140px */
    font-size: 0;
-   
+ 
 }
 
 #zero {
@@ -68,9 +68,28 @@ button:active {
 }
 
 .operators {
-   
+    
 }
 
+#operator1 {
+    background-color: orange;
+}
+
+#operator2 {
+    background-color: orange;
+}
+
+#operator3 {
+    background-color: orange;
+}
+
+#operator4 {
+    background-color: orange;
+}
+
+#operator5 {
+    background-color: orange;
+}
 
 #top-row {
   

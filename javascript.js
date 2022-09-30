@@ -1,3 +1,6 @@
+let startNumber = 0;
+let endNumber = 0;
+
 const add = function(num1, num2) {
     return num1 + num2;
 };
@@ -24,7 +27,7 @@ const divide = function(num1, num2) {
 
 
 const operate = function(name, num1, num2) {
-    return name(num1,num2);
+    return name(num1, num2);
 };
 
     console.log(operate(multiply, 3, 9));
@@ -54,81 +57,83 @@ let pad = document.querySelector(".numpad1"); //store values in a array with que
     pad.addEventListener("click", createValue1);
 
 function createValue1() {
-    let val = 7
+    //startNumber = 7; how are you going to store numbers before pressing add?
+    let val = 7;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
+
 
 let pad1 = document.querySelector(".numpad2");
     pad1.addEventListener("click", createValue2);
 
 function createValue2() {
-    let val = 8
+    let val = 8;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad2 = document.querySelector(".numpad3"); 
     pad2.addEventListener("click", createValue3);
 
 function createValue3() {
-    let val = 9
+    let val = 9;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad3 = document.querySelector(".numpad4"); 
     pad3.addEventListener("click", createValue4);
 
 function createValue4() {
-    let val = 4
+    let val = 4;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad4 = document.querySelector(".numpad5"); 
     pad4.addEventListener("click", createValue5);
 
 function createValue5() {
-    let val = 5
+    let val = 5;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad5 = document.querySelector(".numpad6"); 
     pad5.addEventListener("click", createValue6);
 
 function createValue6() {
-    let val = 6
+    let val = 6;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad6 = document.querySelector(".numpad7");
     pad6.addEventListener("click", createValue7);
 
 function createValue7() {
-    let val = 1
+    let val = 1;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad7 = document.querySelector(".numpad8"); 
     pad7.addEventListener("click", createValue8);
 
 function createValue8() {
-    let val = 2
+    let val = 2;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 let pad8 = document.querySelector(".numpad9"); 
     pad8.addEventListener("click", createValue9);
 
 function createValue9() {
-    let val = 3
+    let val = 3;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 
 
@@ -136,9 +141,9 @@ let pad10 = document.getElementById("zero");
     pad10.addEventListener("click", createValue11);
 
 function createValue11() {
-    let val = 0
+    let val = 0;
     displayValue(val);
-    startCalc()
+    startCalc();
 }
 // end of number click events
 
@@ -194,8 +199,9 @@ function displayValue(val) {
             number.textContent = 0;
             break;
     }
-
-  
 }
 
 
+//start of operator button listeners
+let plus = document.querySelector(".operator4");
+plus.addEventListener("click", addTogether);
