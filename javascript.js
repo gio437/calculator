@@ -216,16 +216,15 @@ function makeValue() {
     let val = 7;
     displayValue(val);
     startCalc();
-    addTogether();
 
     let equal = document.getElementById("operator5");
-equal.addEventListener("click", addTogether);
+    equal.addEventListener("click", addTogether);
 }
 
-
-
 function addTogether() {
-    
     console.log(operate(add, startNumber, endNumber));
 }
 
+let val = "55";
+
+console.log(Number(val) + 1);
