@@ -1,4 +1,4 @@
-let startNumber = 0;
+let startNumber = 0; //maybequeryselect all the values from the numbers div?  add them together?
 let endNumber = 0;
 
 const add = function(num1, num2) {
@@ -57,7 +57,7 @@ let pad = document.querySelector(".numpad1"); //store values in a array with que
     pad.addEventListener("click", createValue1);
 
 function createValue1() {
-    //startNumber = 7; how are you going to store numbers before pressing add?
+    startNumber += 7; //how are you going to store numbers before pressing add?
     let val = 7;
     displayValue(val);
     startCalc();
@@ -203,5 +203,29 @@ function displayValue(val) {
 
 
 //start of operator button listeners
-let plus = document.querySelector(".operator4");
-plus.addEventListener("click", addTogether);
+let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
+plus.addEventListener("click", addAgain);
+
+function addAgain() {
+    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+    pad.addEventListener("click", makeValue);
+}
+
+function makeValue() {
+    endNumber += 7; //how are you going to store numbers before pressing add?
+    let val = 7;
+    displayValue(val);
+    startCalc();
+    addTogether();
+
+    let equal = document.getElementById("operator5");
+equal.addEventListener("click", addTogether);
+}
+
+
+
+function addTogether() {
+    
+    console.log(operate(add, startNumber, endNumber));
+}
+
