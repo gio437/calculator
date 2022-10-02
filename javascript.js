@@ -1,47 +1,52 @@
-let startNumber = 0; //maybequeryselect all the values from the numbers div?  add them together?
-let endNumber = 0;
+//turn number divs into a array
+
+
+//let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
+let startNumber = [];
+let endNumber = [];
 
 const add = function(num1, num2) {
     return num1 + num2;
 };
-    console.log(add(3, 4));
+    //console.log(add(3, 4));
 
 
 const subtract = function(num1, num2) {
     return num1 - num2;
 };
-    console.log(subtract(5, 2));
+    //console.log(subtract(5, 2));
 
 
 const multiply = function(num1, num2) {
     return num1 * num2;
 };
-
-    console.log(multiply(5, 5));
+    //console.log(multiply(5, 5));
 
 const divide = function(num1, num2) {
     return num1 / num2;
 };
 
-    console.log(divide(12, 3));
+    //console.log(divide(12, 3));
 
 
 const operate = function(name, num1, num2) {
     return name(num1, num2);
 };
 
-    console.log(operate(multiply, 3, 9));
+    //console.log(operate(multiply, 3, 9));
 
 // end of operator functions
 
 
 let start = document.querySelector(".begin");
-start.classList.add(".start");
+start.classList.add("start");
 start.textContent = "0";
 
 
+let num = 0; //do num-- when clearing the calculator
+
 function startCalc() {
-let num = 0;
+
 
     if (num == 0) {
         num++;
@@ -52,7 +57,7 @@ let num = 0;
     }
 }
 
-
+//THIS IS BEING TRIGGERED TWICE PLEASE FIX maybe you need to store the value than lock it out after + so it can't be accesed again till equal is pressed?
 let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
     pad.addEventListener("click", createValue1);
 
@@ -204,7 +209,10 @@ function displayValue(val) {
 
 //start of operator button listeners
 let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
-plus.addEventListener("click", addAgain);
+plus.addEventListener("click", addAgain); //this is the add button^
+
+//let grabValue = document.querySelector(".number").getAttribute("value");
+//console.log(grabValue); // this is to get all number div
 
 function addAgain() {
     let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
@@ -213,18 +221,21 @@ function addAgain() {
 
 function makeValue() {
     endNumber += 7; //how are you going to store numbers before pressing add?
-    let val = 7;
-    displayValue(val);
-    startCalc();
+    //let val = 7;
+    //displayValue(val);
+    //startCalc();
 
     let equal = document.getElementById("operator5");
     equal.addEventListener("click", addTogether);
 }
 
 function addTogether() {
+    console.log(startNumber);
+    console.log(endNumber);
     console.log(operate(add, startNumber, endNumber));
 }
 
-let val = "55";
+//let val = "55";
+//test
+//console.log(Number(val) + 1);
 
-console.log(Number(val) + 1);
