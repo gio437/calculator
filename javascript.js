@@ -1,5 +1,5 @@
 //turn number divs into a array
-
+let turnOff = 0;
 
 //let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
@@ -62,10 +62,15 @@ let pad = document.querySelector(".numpad1"); //store values in a array with que
     pad.addEventListener("click", createValue1);
 
 function createValue1() {
+    if (turnOff == 0) {
     startNumber += 7; //how are you going to store numbers before pressing add?
     let val = 7;
     displayValue(val);
     startCalc();
+    }
+    else {
+        return;
+    }
 }
 
 
@@ -215,6 +220,7 @@ plus.addEventListener("click", addAgain); //this is the add button^
 //console.log(grabValue); // this is to get all number div
 
 function addAgain() {
+    turnOff++;
     let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
     pad.addEventListener("click", makeValue);
 }
