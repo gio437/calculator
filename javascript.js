@@ -5,11 +5,19 @@ let turnOff = 0;
 let startNumber = [];
 let endNumber = [];
 
+
 const add = function(num1, num2) {
     return num1 + num2;
 };
     //console.log(add(3, 4));
 
+//turns array into a number =>
+const sum = function(arr1, arr2) { //add array function
+let hello = arr1.join('');
+
+
+console.log(Number(hello));
+};
 
 const subtract = function(num1, num2) {
     return num1 - num2;
@@ -43,10 +51,9 @@ start.classList.add("start");
 start.textContent = "0";
 
 
-let num = 0; //do num-- when clearing the calculator
+let num = 0; //do num-- when clearing the calculator, also decrement turnOff
 
 function startCalc() {
-
 
     if (num == 0) {
         num++;
@@ -63,7 +70,8 @@ let pad = document.querySelector(".numpad1"); //store values in a array with que
 
 function createValue1() {
     if (turnOff == 0) {
-    startNumber += 7; //how are you going to store numbers before pressing add?
+
+    startNumber.push(7); //how are you going to store numbers before pressing add?
     let val = 7;
     displayValue(val);
     startCalc();
@@ -220,25 +228,25 @@ plus.addEventListener("click", addAgain); //this is the add button^
 //console.log(grabValue); // this is to get all number div
 
 function addAgain() {
-    turnOff++;
+    turnOff = 1;
     let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
     pad.addEventListener("click", makeValue);
 }
 
 function makeValue() {
-    endNumber += 7; //how are you going to store numbers before pressing add?
+    endNumber.push(7); //how are you going to store numbers before pressing add?
     //let val = 7;
     //displayValue(val);
     //startCalc();
 
-    let equal = document.getElementById("operator5");
+    let equal = document.getElementById("operator5"); //the equals function
     equal.addEventListener("click", addTogether);
 }
 
 function addTogether() {
     console.log(startNumber);
     console.log(endNumber);
-    console.log(operate(add, startNumber, endNumber));
+    console.log(operate(sum, startNumber, endNumber));
 }
 
 //let val = "55";
