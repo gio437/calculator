@@ -13,10 +13,10 @@ const add = function(num1, num2) {
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
-let hello = arr1.join('');
+let convert1 = arr1.join('');
+let convert2 = arr2.join('');
 
-
-console.log(Number(hello));
+console.log(Number(convert1) + Number(convert2));
 };
 
 const subtract = function(num1, num2) {
