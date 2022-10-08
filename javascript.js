@@ -220,6 +220,58 @@ function displayValue(val) {
     }
 }
 
+function displayValue2(val) {
+    let display = document.querySelector(".text");
+    let number = document.createElement("div");
+    
+
+    display.appendChild(number);
+
+
+    switch(val) {
+        case 7:
+            number.classList.add("number2");
+            number.textContent = 7;
+            break;
+        case 8:
+            number.classList.add("number2");
+            number.textContent = 8;
+            break;
+        case 9:
+            number.classList.add("number2");
+            number.textContent = 9;
+            break;
+        case 4:
+            number.classList.add("number2");
+            number.textContent = 4;
+            break;
+        case 5:
+            number.classList.add("number2");
+            number.textContent = 5;
+            break;
+        case 6:
+            number.classList.add("number2");
+            number.textContent = 6;
+            break;
+        case 1:
+            number.classList.add("number2");
+            number.textContent = 1;
+            break;
+        case 2:
+            number.classList.add("number2");
+            number.textContent = 2;
+            break;
+        case 3:
+            number.classList.add("number2");
+            number.textContent = 3;
+            break;
+        case 0:
+            number.classList.add("number2");
+            number.textContent = 0;
+            break;
+    }
+}
+
 
 //start of operator button listeners
 let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
@@ -236,11 +288,15 @@ function addAgain() {
 function makeValue() {
     endNumber.push(7); //how are you going to store numbers before pressing add?
     let val = 7;
-    displayValue(val);
-    
+    displayValue2(val);
+
     let start = document.querySelectorAll(".number");
     for (let i = 0; i < start.length - 1; i++) {
         start[i].remove();
+    }
+    let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start.length - 1; i++) {
+        start2[i].remove();
     }
     
     
