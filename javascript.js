@@ -1,6 +1,6 @@
 //turn number divs into a array
 let turnOff = 0;
-
+let display = 0;
 //let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
 let endNumber = [];
@@ -16,7 +16,8 @@ const sum = function(arr1, arr2) { //add array function
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-console.log(Number(convert1) + Number(convert2));
+let display = (Number(convert1) + Number(convert2));
+console.log(display);
 };
 
 const subtract = function(num1, num2) {
@@ -222,22 +223,27 @@ function displayValue(val) {
 
 //start of operator button listeners
 let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
-plus.addEventListener("click", addAgain); //this is the add button^
+plus.addEventListener("click", addAgain); //this is the add button
 
-//let grabValue = document.querySelector(".number").getAttribute("value");
-//console.log(grabValue); // this is to get all number div
 
 function addAgain() {
     turnOff = 1;
     let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
     pad.addEventListener("click", makeValue);
+   
 }
 
 function makeValue() {
     endNumber.push(7); //how are you going to store numbers before pressing add?
-    //let val = 7;
-    //displayValue(val);
-    //startCalc();
+    let val = 7;
+    displayValue(val);
+    
+    let start = document.querySelectorAll(".number");
+    for (let i = 0; i < start.length - 1; i++) {
+        start[i].remove();
+    }
+    
+    
 
     let equal = document.getElementById("operator5"); //the equals function
     equal.addEventListener("click", addTogether);
@@ -246,7 +252,7 @@ function makeValue() {
 function addTogether() {
     console.log(startNumber);
     console.log(endNumber);
-    console.log(operate(sum, startNumber, endNumber));
+    operate(sum, startNumber, endNumber);
 }
 
 //let val = "55";
