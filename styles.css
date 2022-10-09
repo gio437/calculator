@@ -1,9 +1,3 @@
-html {
-    height: 2000px;
-    background-color: gray;
-}
-
-
 body {
     height: 800px;
     background-color: gray;
@@ -42,10 +36,11 @@ button:active {
 .text-box {
     margin-right: 11px;
     font-size: 50px;
-   background-color: rgb(80, 79, 79);
+    background-color: rgb(80, 79, 79);
     color: white;
-   width: 240px;
-   
+    width: 240px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 
@@ -55,10 +50,14 @@ button:active {
    font-size: 0;
  
 }
+.start {
+    margin-right: 10px;
+}
 
 #zero {
     width: 120px;
     background-color: lightgrey;
+    border-bottom-left-radius: 30px;
 }
 
 #zero:active {
@@ -94,6 +93,7 @@ button:active {
 
 #operator5 {
     background-color: orange;
+    border-bottom-right-radius: 30px;
 }
 
 #top-row {
@@ -134,7 +134,7 @@ button:active {
 }
 
 .numpad6 {
-    background-color: lightgrey;
+    background-color: lightgray;
     
 }
 
