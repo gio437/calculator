@@ -13,18 +13,22 @@ const add = function(num1, num2) {
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-let display = (Number(convert1) + Number(convert2));
+display += Number(convert1) + Number(convert2);
 console.log(display);
+
+startNumber = [];
+endNumber = [];
 };
+
 
 const subtract = function(num1, num2) {
     return num1 - num2;
 };
     //console.log(subtract(5, 2));
-
 
 const multiply = function(num1, num2) {
     return num1 * num2;
@@ -37,11 +41,9 @@ const divide = function(num1, num2) {
 
     //console.log(divide(12, 3));
 
-
 const operate = function(name, num1, num2) {
     return name(num1, num2);
 };
-
     //console.log(operate(multiply, 3, 9));
 
 // end of operator functions
@@ -55,7 +57,6 @@ start.textContent = "0";
 let num = 0; //do num-- when clearing the calculator, also decrement turnOff
 
 function startCalc() {
-
     if (num == 0) {
         num++;
         start.textContent = "";
@@ -71,16 +72,51 @@ let pad = document.querySelector(".numpad1"); //store values in a array with que
 
 function createValue1() {
     if (turnOff == 0) {
-
-    startNumber.push(7); //how are you going to store numbers before pressing add?
-    let val = 7;
-    displayValue(val);
-    startCalc();
+        startNumber.push(7); //how are you going to store numbers before pressing add?
+        let val = 7;
+        displayValue(val);
+        startCalc();
     }
     else {
         return;
     }
 }
+
+//start of operator button listeners
+let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
+plus.addEventListener("click", addAgain); //this is the add button
+
+
+function addAgain() {
+    turnOff = 1;
+    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+    pad.addEventListener("click", makeValue);
+   
+}
+
+function makeValue() {
+    endNumber.push(7); //how are you going to store numbers before pressing add?
+    let val = 7;
+    displayValue2(val);
+    
+    let start = document.querySelectorAll(".number");
+    for (let i = 0; i < start.length; i++) {
+        start[i].remove();
+    }
+    
+    let equal = document.getElementById("operator5"); //the equals function
+    equal.addEventListener("click", addTogether);
+}
+
+function addTogether() {
+    console.log(startNumber);
+    console.log(endNumber);
+    operate(sum, startNumber, endNumber);
+}
+
+//let val = "55";
+//test
+//console.log(Number(val) + 1);
 
 
 let pad1 = document.querySelector(".numpad2");
@@ -272,46 +308,4 @@ function displayValue2(val) {
     }
 }
 
-
-//start of operator button listeners
-let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
-plus.addEventListener("click", addAgain); //this is the add button
-
-
-function addAgain() {
-    turnOff = 1;
-    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
-    pad.addEventListener("click", makeValue);
-   
-}
-
-function makeValue() {
-    endNumber.push(7); //how are you going to store numbers before pressing add?
-    let val = 7;
-    displayValue2(val);
-
-    let start = document.querySelectorAll(".number");
-    for (let i = 0; i < start.length - 1; i++) {
-        start[i].remove();
-    }
-    let start2 = document.querySelectorAll(".number2");
-    for (let i = 0; i < start.length - 1; i++) {
-        start2[i].remove();
-    }
-    
-    
-
-    let equal = document.getElementById("operator5"); //the equals function
-    equal.addEventListener("click", addTogether);
-}
-
-function addTogether() {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(sum, startNumber, endNumber);
-}
-
-//let val = "55";
-//test
-//console.log(Number(val) + 1);
 
