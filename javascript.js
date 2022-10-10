@@ -57,7 +57,7 @@ start.classList.add("start");
 start.textContent = "0";
 
 
-let num = 0; //do num-- when clearing the calculator, also decrement turnOff
+let num = 0; //do num-- when clearing the calculator, also decrement turnOff, and maybe forceEval?
 
 function startCalc() {
     if (num == 0) {
@@ -69,25 +69,10 @@ function startCalc() {
     }
 }
 
-//THIS IS BEING TRIGGERED TWICE PLEASE FIX maybe you need to store the value than lock it out after + so it can't be accesed again till equal is pressed?
-let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
-    pad.addEventListener("click", createValue1);
 
-function createValue1() {
-    if (turnOff == 0) {
-        startNumber.push(7); //how are you going to store numbers before pressing add?
-        let val = 7;
-        displayValue(val);
-        startCalc();
-    }
-    else {
-        return;
-    }
-}
-
-//start of operator button listeners
 let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
 plus.addEventListener("click", addAgain); //this is the add button
+
 
 
 function addAgain() {
@@ -96,17 +81,35 @@ function addAgain() {
     if (forceEval == 1) {
         addTogether();
     }
-    else {
-        let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
-        pad.addEventListener("click", makeValue);
-    }
+   
+            let pad = document.querySelector(".numpad1");
+            pad.addEventListener("click", makeValue);
+           
+
+            let eight = document.querySelector(".numpad2");
+            eight.addEventListener("click", makeValue);
+            
 }
 
+let set = 0; //picks the number for the second array
+
 function makeValue() {
-    endNumber.push(7); //how are you going to store numbers before pressing add?
-    let val = 7;
     forceEval = 1;
-    displayValue2(val);
+   switch(set){
+    case 7:
+        endNumber.push(7);
+        let val = 7;
+        displayValue2(val);
+        set = 7;
+        break;
+    case 8:
+        endNumber.push(8);
+        let val = 7;
+        displayValue2(val);
+        set = 7;
+        break;
+    }
+
     let start = document.querySelectorAll(".number");
     for (let i = 0; i < start.length; i++) {
         start[i].remove();
@@ -116,24 +119,37 @@ function makeValue() {
     equal.addEventListener("click", addTogether);
 }
 
-function addTogether() {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(sum, startNumber, endNumber);
+
+//maybe you need to store the value than lock it out after + so it can't be accesed again till equal is pressed?
+let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+    pad.addEventListener("click", createValue1);
+
+function createValue1() {
+
+    if (turnOff == 0) {
+        startNumber.push(7); 
+        let val = 7;
+        displayValue(val);
+        startCalc();
+    }
+    else {
+        return;
+    }
 }
-
-//let val = "55";
-//test
-//console.log(Number(val) + 1);
-
 
 let pad1 = document.querySelector(".numpad2");
     pad1.addEventListener("click", createValue2);
 
 function createValue2() {
-    let val = 8;
-    displayValue(val);
-    startCalc();
+    if (turnOff == 0) {
+        startNumber.push(8); 
+        let val = 8;
+        displayValue(val);
+        startCalc();
+    }
+    else {
+        return;
+    }
 }
 
 let pad2 = document.querySelector(".numpad3"); 
@@ -210,7 +226,11 @@ function createValue11() {
 }
 // end of number click events
 
-
+function addTogether() { //adds the inputs together
+    console.log(startNumber);
+    console.log(endNumber);
+    operate(sum, startNumber, endNumber);
+}
 
 function displayValue(val) {
     let display = document.querySelector(".text");
@@ -224,26 +244,32 @@ function displayValue(val) {
         case 7:
             number.classList.add("number");
             number.textContent = 7;
+            set = 7
             break;
         case 8:
             number.classList.add("number");
             number.textContent = 8;
+            set = 8
             break;
         case 9:
             number.classList.add("number");
             number.textContent = 9;
+
             break;
         case 4:
             number.classList.add("number");
             number.textContent = 4;
+  
             break;
         case 5:
             number.classList.add("number");
             number.textContent = 5;
+
             break;
         case 6:
             number.classList.add("number");
             number.textContent = 6;
+
             break;
         case 1:
             number.classList.add("number");
