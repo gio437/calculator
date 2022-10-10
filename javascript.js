@@ -1,6 +1,7 @@
 //turn number divs into a array
 let turnOff = 0;
 let display = 0;
+let forceEval = 0;
 //let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
 let endNumber = [];
@@ -22,6 +23,8 @@ console.log(display);
 
 startNumber = [];
 endNumber = [];
+
+forceEval = 0;
 };
 
 
@@ -89,16 +92,21 @@ plus.addEventListener("click", addAgain); //this is the add button
 
 function addAgain() {
     turnOff = 1;
-    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
-    pad.addEventListener("click", makeValue);
-   
+
+    if (forceEval == 1) {
+        addTogether();
+    }
+    else {
+        let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+        pad.addEventListener("click", makeValue);
+    }
 }
 
 function makeValue() {
     endNumber.push(7); //how are you going to store numbers before pressing add?
     let val = 7;
+    forceEval = 1;
     displayValue2(val);
-    
     let start = document.querySelectorAll(".number");
     for (let i = 0; i < start.length; i++) {
         start[i].remove();
@@ -212,7 +220,7 @@ function displayValue(val) {
     display.appendChild(number);
 
 
-    switch(val) {
+    switch(val) { //maybe add querySelector and just add a if statemant to create the first unique div than if its already there add the regular number div?
         case 7:
             number.classList.add("number");
             number.textContent = 7;

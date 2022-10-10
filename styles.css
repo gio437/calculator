@@ -47,9 +47,10 @@ button:active {
 .numbers {
     flex-wrap: wrap;
     width: 250px; /* default is 140px */
-   font-size: 0;
- 
+    font-size: 0;
 }
+
+
 .start {
     margin-right: 10px;
 }
@@ -71,9 +72,6 @@ button:active {
  
 }
 
-.operators {
-    
-}
 
 #operator1 {
     background-color: orange;
@@ -96,10 +94,7 @@ button:active {
     border-bottom-right-radius: 30px;
 }
 
-#top-row {
-  
-}
- #operator{
+#operator{
     background-color: orange;
     
 } 
