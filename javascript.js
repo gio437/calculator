@@ -81,11 +81,35 @@ function addAgain() {
         addTogether();
     }
    
-        let pad = document.querySelector(".numpad1");
-        pad.addEventListener("click", addDifNum1);
+        let seven = document.querySelector(".numpad1");
+        seven.addEventListener("click", addDifNum1);
 
         let eight = document.querySelector(".numpad2");
         eight.addEventListener("click", addDifNum2);
+
+        let nine = document.querySelector(".numpad3");
+        nine.addEventListener("click", addDifNum3);
+
+        let four = document.querySelector(".numpad4");
+        four.addEventListener("click", addDifNum4);
+
+        let five = document.querySelector(".numpad5");
+        five.addEventListener("click", addDifNum5);
+
+        let six = document.querySelector(".numpad6");
+        six.addEventListener("click", addDifNum6);
+
+        let one = document.querySelector(".numpad7");
+        one.addEventListener("click", addDifNum7);
+
+        let two = document.querySelector(".numpad8");
+        two.addEventListener("click", addDifNum8);
+
+        let three = document.querySelector(".numpad9");
+        three.addEventListener("click", addDifNum9);
+
+        let zero = document.getElementById("zero");
+        zero.addEventListener("click", addDifNum10);
 }
 
 function addDifNum1() {
@@ -95,6 +119,46 @@ function addDifNum1() {
 
 function addDifNum2() {
     set = 8;
+    makeValue();
+}
+
+function addDifNum3() {
+    set = 9;
+    makeValue();
+}
+
+function addDifNum4() {
+    set = 4;
+    makeValue();
+}
+
+function addDifNum5() {
+    set = 5;
+    makeValue();
+}
+
+function addDifNum6() {
+    set = 6;
+    makeValue();
+}
+
+function addDifNum7() {
+    set = 1;
+    makeValue();
+}
+
+function addDifNum8() {
+    set = 2;
+    makeValue();
+}
+
+function addDifNum9() {
+    set = 3;
+    makeValue();
+}
+
+function addDifNum10() {
+    set = 0;
     makeValue();
 }
 
@@ -108,15 +172,55 @@ forceEval = 1;
         endNumber.push(7);
         val = 7;
         displayValue2(val);
-        set = 7;
         break;
     case 8:
         endNumber.push(8);
         val = 8;
         displayValue2(val);
-        set = 8;
         break;
-    }
+    case 9:
+        endNumber.push(9);
+        val = 9;
+        displayValue2(val);
+        break;
+    case 4:
+        endNumber.push(4);
+        val = 4;
+        displayValue2(val);
+        break;
+    case 5:
+        endNumber.push(5);
+        val = 5;
+        displayValue2(val);
+        break;
+    case 6:
+        endNumber.push(6);
+        val = 6;
+        displayValue2(val);
+        break;
+    case 1:
+        endNumber.push(1);
+        val = 1;
+        displayValue2(val);
+        break;
+    
+    case 2:
+        endNumber.push(2);
+        val = 2;
+        displayValue2(val);
+        break;
+    case 3:
+        endNumber.push(3);
+        val = 3;
+        displayValue2(val);    
+        break;
+    case 0:
+        endNumber.push(0);
+        val = 0;
+        displayValue2(val);
+     
+        break;
+   }
 
 
     let start = document.querySelectorAll(".number");
@@ -266,38 +370,42 @@ function displayValue(val) {
         case 9:
             number.classList.add("number");
             number.textContent = 9;
-
+            set = 9;
             break;
         case 4:
             number.classList.add("number");
             number.textContent = 4;
-  
+            set = 4;
             break;
         case 5:
             number.classList.add("number");
             number.textContent = 5;
-
+            set = 5;
             break;
         case 6:
             number.classList.add("number");
             number.textContent = 6;
-
+            set = 6;
             break;
         case 1:
             number.classList.add("number");
             number.textContent = 1;
+            set = 1;
             break;
         case 2:
             number.classList.add("number");
             number.textContent = 2;
+            set = 2;
             break;
         case 3:
             number.classList.add("number");
             number.textContent = 3;
+            set = 3;
             break;
         case 0:
             number.classList.add("number");
             number.textContent = 0;
+            set = 0;
             break;
     }
 }
@@ -324,34 +432,42 @@ function displayValue2(val) {
         case 9:
             number.classList.add("number2");
             number.textContent = 9;
+            set = 9;
             break;
         case 4:
             number.classList.add("number2");
             number.textContent = 4;
+            set = 4;
             break;
         case 5:
             number.classList.add("number2");
             number.textContent = 5;
+            set = 5;
             break;
         case 6:
             number.classList.add("number2");
             number.textContent = 6;
+            set = 6;
             break;
         case 1:
             number.classList.add("number2");
             number.textContent = 1;
+            set = 1;
             break;
         case 2:
             number.classList.add("number2");
             number.textContent = 2;
+            set = 2;
             break;
         case 3:
             number.classList.add("number2");
             number.textContent = 3;
+            set = 3;
             break;
         case 0:
             number.classList.add("number2");
             number.textContent = 0;
+            set = 0;
             break;
     }
 }
