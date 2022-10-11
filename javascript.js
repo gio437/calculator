@@ -82,13 +82,18 @@ function addAgain() {
     }
    
         let pad = document.querySelector(".numpad1");
-        pad.addEventListener("click", makeValue);
+        pad.addEventListener("click", addDifNum1);
 
         let eight = document.querySelector(".numpad2");
-        eight.addEventListener("click", addDifNum);
+        eight.addEventListener("click", addDifNum2);
 }
 
-function addDifNum() {
+function addDifNum1() {
+    set = 7;
+    makeValue();
+}
+
+function addDifNum2() {
     set = 8;
     makeValue();
 }
