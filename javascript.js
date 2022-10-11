@@ -41,7 +41,6 @@ const multiply = function(num1, num2) {
 const divide = function(num1, num2) {
     return num1 / num2;
 };
-
     //console.log(divide(12, 3));
 
 const operate = function(name, num1, num2) {
@@ -59,7 +58,7 @@ start.textContent = "0";
 
 let num = 0; //do num-- when clearing the calculator, also decrement turnOff, and maybe forceEval?
 
-function startCalc() {
+function startCalc() { //clears beginning 0
     if (num == 0) {
         num++;
         start.textContent = "";
@@ -82,33 +81,38 @@ function addAgain() {
         addTogether();
     }
    
-            let pad = document.querySelector(".numpad1");
-            pad.addEventListener("click", makeValue);
-           
+        let pad = document.querySelector(".numpad1");
+        pad.addEventListener("click", makeValue);
 
-            let eight = document.querySelector(".numpad2");
-            eight.addEventListener("click", makeValue);
-            
+        let eight = document.querySelector(".numpad2");
+        eight.addEventListener("click", addDifNum);
 }
 
-let set = 0; //picks the number for the second array
+function addDifNum() {
+    set = 8;
+    makeValue();
+}
+
+let set = 0; //picks the number for the second array //set is becoming only the first value**
 
 function makeValue() {
-    forceEval = 1;
+forceEval = 1;
+
    switch(set){
     case 7:
         endNumber.push(7);
-        let val = 7;
+        val = 7;
         displayValue2(val);
         set = 7;
         break;
     case 8:
         endNumber.push(8);
-        let val = 7;
+        val = 8;
         displayValue2(val);
-        set = 7;
+        set = 8;
         break;
     }
+
 
     let start = document.querySelectorAll(".number");
     for (let i = 0; i < start.length; i++) {
@@ -121,14 +125,17 @@ function makeValue() {
 
 
 //maybe you need to store the value than lock it out after + so it can't be accesed again till equal is pressed?
-let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
     pad.addEventListener("click", createValue1);
 
-function createValue1() {
+    let eight = document.querySelector(".numpad2"); 
+    eight.addEventListener("click", createValue2);
 
+
+function createValue1() {
     if (turnOff == 0) {
         startNumber.push(7); 
-        let val = 7;
+        val = 7;
         displayValue(val);
         startCalc();
     }
@@ -143,7 +150,7 @@ let pad1 = document.querySelector(".numpad2");
 function createValue2() {
     if (turnOff == 0) {
         startNumber.push(8); 
-        let val = 8;
+        val = 8;
         displayValue(val);
         startCalc();
     }
@@ -244,12 +251,12 @@ function displayValue(val) {
         case 7:
             number.classList.add("number");
             number.textContent = 7;
-            set = 7
+            set = 7;
             break;
         case 8:
             number.classList.add("number");
             number.textContent = 8;
-            set = 8
+            set = 8;
             break;
         case 9:
             number.classList.add("number");
@@ -302,10 +309,12 @@ function displayValue2(val) {
         case 7:
             number.classList.add("number2");
             number.textContent = 7;
+            set = 7;
             break;
         case 8:
             number.classList.add("number2");
             number.textContent = 8;
+            set = 8;
             break;
         case 9:
             number.classList.add("number2");
