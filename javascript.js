@@ -218,7 +218,6 @@ forceEval = 1;
         endNumber.push(0);
         val = 0;
         displayValue2(val);
-     
         break;
    }
 
@@ -234,12 +233,8 @@ forceEval = 1;
 
 
 //maybe you need to store the value than lock it out after + so it can't be accesed again till equal is pressed?
-    let pad = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
-    pad.addEventListener("click", createValue1);
-
-    let eight = document.querySelector(".numpad2"); 
-    eight.addEventListener("click", createValue2);
-
+let seven = document.querySelector(".numpad1"); //store values in a array with querySelectorAll?
+    seven.addEventListener("click", createValue1);
 
 function createValue1() {
     if (turnOff == 0) {
@@ -272,73 +267,115 @@ let pad2 = document.querySelector(".numpad3");
     pad2.addEventListener("click", createValue3);
 
 function createValue3() {
+    if (turnOff == 0) {
+    startNumber.push(9);
     let val = 9;
     displayValue(val);
     startCalc();
+    }
+    else {
+        return;
+    }
 }
 
 let pad3 = document.querySelector(".numpad4"); 
     pad3.addEventListener("click", createValue4);
 
 function createValue4() {
+    if (turnOff == 0) {
+    startNumber.push(4);
     let val = 4;
     displayValue(val);
     startCalc();
+    }
+    else {
+        return;
+    }
 }
 
 let pad4 = document.querySelector(".numpad5"); 
     pad4.addEventListener("click", createValue5);
 
 function createValue5() {
+    if (turnOff == 0) {
+    startNumber.push(5);
     let val = 5;
     displayValue(val);
     startCalc();
+     } else {
+        return;
+    }
 }
 
 let pad5 = document.querySelector(".numpad6"); 
     pad5.addEventListener("click", createValue6);
 
 function createValue6() {
+    if (turnOff == 0) {
+    startNumber.push(6);
     let val = 6;
     displayValue(val);
     startCalc();
+    } else {
+        return;
+    }
 }
 
 let pad6 = document.querySelector(".numpad7");
     pad6.addEventListener("click", createValue7);
 
 function createValue7() {
+    if (turnOff == 0) {
+    startNumber.push(1);
     let val = 1;
     displayValue(val);
     startCalc();
+    } else {
+        return;
+    }
 }
 
 let pad7 = document.querySelector(".numpad8"); 
     pad7.addEventListener("click", createValue8);
 
 function createValue8() {
+    if (turnOff == 0) {
+    startNumber.push(2);
     let val = 2;
     displayValue(val);
     startCalc();
+    } else {
+        return;
+    }
 }
 
 let pad8 = document.querySelector(".numpad9"); 
     pad8.addEventListener("click", createValue9);
 
 function createValue9() {
+    if (turnOff == 0) {
+    startNumber.push(3);
     let val = 3;
     displayValue(val);
     startCalc();
+    } else {
+        return;
+    }
 }
 
 
 let pad10 = document.getElementById("zero");
-    pad10.addEventListener("click", createValue11);
+    pad10.addEventListener("click", createValue10);
 
-function createValue11() {
+function createValue10() {
+    if (turnOff == 0) {
+    startNumber.push(0);
     let val = 0;
     displayValue(val);
     startCalc();
+    } else { 
+        return;
+    }
 }
 // end of number click events
 
