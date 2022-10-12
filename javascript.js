@@ -6,6 +6,10 @@ let forceEval = 0;
 let startNumber = [];
 let endNumber = [];
 
+let addition = 0;
+let multiplication = 0;
+let division = 0;
+let subtraction = 0;
 
 const add = function(num1, num2) {
     return num1 + num2;
@@ -14,7 +18,6 @@ const add = function(num1, num2) {
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
-
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
@@ -33,8 +36,17 @@ const subtract = function(num1, num2) {
 };
     //console.log(subtract(5, 2));
 
-const multiply = function(num1, num2) {
-    return num1 * num2;
+const multiply = function(arr1, arr2) {
+let convert1 = arr1.join('');
+let convert2 = arr2.join('');
+
+display += Number(convert1) * Number(convert2);
+console.log(display);
+
+startNumber = [];
+endNumber = [];
+
+forceEval = 0;
 };
     //console.log(multiply(5, 5));
 
@@ -72,10 +84,51 @@ function startCalc() { //clears beginning 0
 let plus = document.getElementById("operator4"); //YOU NEED TO CREATE A NEW DIV WITH 7
 plus.addEventListener("click", addAgain); //this is the add button
 
-
+let times = document.getElementById("operator2");
+times.addEventListener("click", multiplyAgain);
 
 function addAgain() {
     turnOff = 1;
+    addition = 1;
+
+    if (forceEval == 1) {
+        addTogether();
+    }
+   
+        let seven = document.querySelector(".numpad1");
+        seven.addEventListener("click", addDifNum1);
+
+        let eight = document.querySelector(".numpad2");
+        eight.addEventListener("click", addDifNum2);
+
+        let nine = document.querySelector(".numpad3");
+        nine.addEventListener("click", addDifNum3);
+
+        let four = document.querySelector(".numpad4");
+        four.addEventListener("click", addDifNum4);
+
+        let five = document.querySelector(".numpad5");
+        five.addEventListener("click", addDifNum5);
+
+        let six = document.querySelector(".numpad6");
+        six.addEventListener("click", addDifNum6);
+
+        let one = document.querySelector(".numpad7");
+        one.addEventListener("click", addDifNum7);
+
+        let two = document.querySelector(".numpad8");
+        two.addEventListener("click", addDifNum8);
+
+        let three = document.querySelector(".numpad9");
+        three.addEventListener("click", addDifNum9);
+
+        let zero = document.getElementById("zero");
+        zero.addEventListener("click", addDifNum10);
+}
+
+function multiplyAgain() {
+    turnOff = 1;
+    multiplication = 1;
 
     if (forceEval == 1) {
         addTogether();
@@ -380,9 +433,21 @@ function createValue10() {
 // end of number click events
 
 function addTogether() { //adds the inputs together
+if (addition == 1) {
     console.log(startNumber);
     console.log(endNumber);
     operate(sum, startNumber, endNumber);
+}
+else if (multiplication == 1) {
+    console.log(startNumber);
+    console.log(endNumber);
+    operate(multiply, startNumber, endNumber);
+}
+
+    addition = 0;
+    multiplication = 0;
+    subtraction = 0;
+    division = 0;
 }
 
 function displayValue(val) {
