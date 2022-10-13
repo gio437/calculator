@@ -31,8 +31,17 @@ forceEval = 0;
 };
 
 
-const subtract = function(num1, num2) {
-    return num1 - num2;
+const subtract = function(arr1, arr2) {
+let convert1 = arr1.join('');
+let convert2 = arr2.join('');
+
+display += Number(convert1) - Number(convert2);
+console.log(display);
+
+startNumber = [];
+endNumber = [];
+
+forceEval = 0;
 };
     //console.log(subtract(5, 2));
 
@@ -50,8 +59,17 @@ forceEval = 0;
 };
     //console.log(multiply(5, 5));
 
-const divide = function(num1, num2) {
-    return num1 / num2;
+const divide = function(arr1, arr2) {
+let convert1 = arr1.join('');
+let convert2 = arr2.join('');
+
+display += Number(convert1) / Number(convert2);
+console.log(display);
+
+startNumber = [];
+endNumber = [];
+
+forceEval = 0;
 };
     //console.log(divide(12, 3));
 
@@ -86,6 +104,12 @@ plus.addEventListener("click", addAgain); //this is the add button
 
 let times = document.getElementById("operator2");
 times.addEventListener("click", multiplyAgain);
+
+let minus = document.getElementById("operator3");
+minus.addEventListener("click", subtractAgain);
+
+let half = document.getElementById("operator1");
+half.addEventListener("click", divideAgain);
 
 function addAgain() {
     turnOff = 1;
@@ -129,6 +153,84 @@ function addAgain() {
 function multiplyAgain() {
     turnOff = 1;
     multiplication = 1;
+
+    if (forceEval == 1) {
+        addTogether();
+    }
+   
+        let seven = document.querySelector(".numpad1");
+        seven.addEventListener("click", addDifNum1);
+
+        let eight = document.querySelector(".numpad2");
+        eight.addEventListener("click", addDifNum2);
+
+        let nine = document.querySelector(".numpad3");
+        nine.addEventListener("click", addDifNum3);
+
+        let four = document.querySelector(".numpad4");
+        four.addEventListener("click", addDifNum4);
+
+        let five = document.querySelector(".numpad5");
+        five.addEventListener("click", addDifNum5);
+
+        let six = document.querySelector(".numpad6");
+        six.addEventListener("click", addDifNum6);
+
+        let one = document.querySelector(".numpad7");
+        one.addEventListener("click", addDifNum7);
+
+        let two = document.querySelector(".numpad8");
+        two.addEventListener("click", addDifNum8);
+
+        let three = document.querySelector(".numpad9");
+        three.addEventListener("click", addDifNum9);
+
+        let zero = document.getElementById("zero");
+        zero.addEventListener("click", addDifNum10);
+}
+
+function subtractAgain() {
+    turnOff = 1;
+    subtraction = 1;
+
+    if (forceEval == 1) {
+        addTogether();
+    }
+   
+        let seven = document.querySelector(".numpad1");
+        seven.addEventListener("click", addDifNum1);
+
+        let eight = document.querySelector(".numpad2");
+        eight.addEventListener("click", addDifNum2);
+
+        let nine = document.querySelector(".numpad3");
+        nine.addEventListener("click", addDifNum3);
+
+        let four = document.querySelector(".numpad4");
+        four.addEventListener("click", addDifNum4);
+
+        let five = document.querySelector(".numpad5");
+        five.addEventListener("click", addDifNum5);
+
+        let six = document.querySelector(".numpad6");
+        six.addEventListener("click", addDifNum6);
+
+        let one = document.querySelector(".numpad7");
+        one.addEventListener("click", addDifNum7);
+
+        let two = document.querySelector(".numpad8");
+        two.addEventListener("click", addDifNum8);
+
+        let three = document.querySelector(".numpad9");
+        three.addEventListener("click", addDifNum9);
+
+        let zero = document.getElementById("zero");
+        zero.addEventListener("click", addDifNum10);
+}
+
+function divideAgain() {
+    turnOff = 1;
+    division = 1;
 
     if (forceEval == 1) {
         addTogether();
@@ -442,6 +544,16 @@ else if (multiplication == 1) {
     console.log(startNumber);
     console.log(endNumber);
     operate(multiply, startNumber, endNumber);
+}
+else if (subtraction == 1) {
+    console.log(startNumber);
+    console.log(endNumber);
+    operate(subtract, startNumber, endNumber);
+}
+else if (division == 1) {
+    console.log(startNumber);
+    console.log(endNumber);
+    operate(divide, startNumber, endNumber);
 }
 
     addition = 0;
