@@ -1,6 +1,6 @@
 body {
     height: 800px;
-    background-color: gray;
+    background-color: black;
 }
 
 .main {
@@ -16,7 +16,7 @@ body {
 
 button {
    padding: 15px;
-   background-color: grey;
+   background-color: rgb(57, 57, 57);
    margin: 0;
    font-size: 24px;
    color: white;
@@ -36,11 +36,12 @@ button:active {
 .text-box {
     margin-right: 11px;
     font-size: 50px;
-    background-color: rgb(80, 79, 79);
+    background-color: rgb(31, 31, 31);
     color: white;
     width: 240px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    height: 80px;
 }
 
 
@@ -52,12 +53,13 @@ button:active {
 
 
 .start {
+    margin-top: 25px;
     margin-right: 10px;
 }
 
 #zero {
     width: 120px;
-    background-color: lightgrey;
+    background-color: grey;
     border-bottom-left-radius: 30px;
 }
 
@@ -104,55 +106,55 @@ button:active {
 }
 
 .numpad1 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad2 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad3 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad4 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad5 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad6 {
-    background-color: lightgray;
+    background-color: grey;
     
 }
 
 
 .numpad7 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 
 .numpad8 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 
 .numpad9 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
 .numpad10 {
-    background-color: lightgrey;
+    background-color: grey;
     
 }
 
@@ -197,6 +199,28 @@ button:active {
 
 #numpad10:active {
     background-color: white;
+}
+
+
+
+#operator1:active {
+    background-color: black;
+}
+
+#operator2:active {
+    background-color: black;
+}
+
+#operator3:active {
+    background-color: black;
+}
+
+#operator4:active {
+    background-color: black;
+}
+
+#operator5:active {
+    background-color: black;
 }
 
 

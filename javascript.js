@@ -11,6 +11,8 @@ let multiplication = 0;
 let division = 0;
 let subtraction = 0;
 
+let equalTwice = 0
+
 const add = function(num1, num2) {
     return num1 + num2;
 };
@@ -540,17 +542,17 @@ if (addition == 1) {
     console.log(endNumber);
     operate(sum, startNumber, endNumber);
 }
-else if (multiplication == 1) {
+if (multiplication == 1) {
     console.log(startNumber);
     console.log(endNumber);
     operate(multiply, startNumber, endNumber);
 }
-else if (subtraction == 1) {
+if (subtraction == 1) {
     console.log(startNumber);
     console.log(endNumber);
     operate(subtract, startNumber, endNumber);
 }
-else if (division == 1) {
+if (division == 1) {
     console.log(startNumber);
     console.log(endNumber);
     operate(divide, startNumber, endNumber);
