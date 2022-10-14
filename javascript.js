@@ -13,10 +13,6 @@ let subtraction = 0;
 
 let equalTwice = 0
 
-const add = function(num1, num2) {
-    return num1 + num2;
-};
-    //console.log(add(3, 4));
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
@@ -25,6 +21,19 @@ let convert2 = arr2.join('');
 
 display += Number(convert1) + Number(convert2);
 console.log(display);
+
+let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start2.length; i++) {
+        start2[i].remove();
+    }
+
+let show = document.querySelector(".text");
+let number = document.createElement("div");
+    
+show.appendChild(number);
+
+number.classList.add("number2");
+number.textContent = display;
 
 startNumber = [];
 endNumber = [];
@@ -40,6 +49,20 @@ let convert2 = arr2.join('');
 display += Number(convert1) - Number(convert2);
 console.log(display);
 
+
+let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start2.length; i++) {
+        start2[i].remove();
+    }
+
+let show = document.querySelector(".text");
+let number = document.createElement("div");
+    
+show.appendChild(number);
+
+number.classList.add("number2");
+number.textContent = display;
+
 startNumber = [];
 endNumber = [];
 
@@ -54,6 +77,19 @@ let convert2 = arr2.join('');
 display *= Number(convert1) + Number(convert2);
 console.log(display);
 
+let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start2.length; i++) {
+        start2[i].remove();
+    }
+
+let show = document.querySelector(".text");
+let number = document.createElement("div");
+    
+show.appendChild(number);
+
+number.classList.add("number2");
+number.textContent = display;
+
 startNumber = [];
 endNumber = [];
 
@@ -64,6 +100,19 @@ forceEval = 0;
 const divide = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
+
+let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start2.length; i++) {
+        start2[i].remove();
+    }
+
+let show = document.querySelector(".text");
+let number = document.createElement("div");
+    
+show.appendChild(number);
+
+number.classList.add("number2");
+number.textContent = display;
 
 display /= Number(convert1) + Number(convert2);
 console.log(display);
@@ -98,6 +147,30 @@ function startCalc() { //clears beginning 0
     else {
         return;
     }
+}
+
+let clear = document.getElementById("clear");
+clear.addEventListener("click", clearCalc);
+
+function clearCalc() { //clears calculator
+    display = 0;
+    num = 0;
+    turnOff = 0;
+    forceEval = 0;
+
+    let start = document.querySelectorAll(".number");
+    for (let i = 0; i < start.length; i++) {
+        start[i].remove();
+    }
+
+    let start2 = document.querySelectorAll(".number2");
+    for (let i = 0; i < start2.length; i++) {
+        start2[i].remove();
+    }
+
+    let start3 = document.querySelector(".begin");
+    start3.classList.add("start");
+    start3.textContent = "0";
 }
 
 
