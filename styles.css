@@ -16,7 +16,7 @@ body {
 
 button {
    padding: 15px;
-   background-color: rgb(57, 57, 57);
+   background-color: rgb(66, 65, 65);
    margin: 0;
    font-size: 24px;
    color: white;
@@ -52,7 +52,9 @@ button:active {
 }
 
 
-.start {
+
+
+.text {
     margin-top: 25px;
     margin-right: 10px;
 }
