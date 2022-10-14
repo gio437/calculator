@@ -51,7 +51,7 @@ const multiply = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-display += Number(convert1) * Number(convert2);
+display *= Number(convert1) + Number(convert2);
 console.log(display);
 
 startNumber = [];
@@ -65,7 +65,7 @@ const divide = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-display += Number(convert1) / Number(convert2);
+display /= Number(convert1) + Number(convert2);
 console.log(display);
 
 startNumber = [];
@@ -92,7 +92,7 @@ let num = 0; //do num-- when clearing the calculator, also decrement turnOff, an
 
 function startCalc() { //clears beginning 0
     if (num == 0) {
-        num++;
+        num = 1;
         start.textContent = "";
     }
     else {
