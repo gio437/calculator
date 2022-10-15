@@ -119,20 +119,34 @@ forceEval = 0;
 const divide = function(arr1, arr2) {
     removeDisplayNum();
 
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-display += Number(convert1) / Number(convert2);
-console.log(display);
 
-if (startNumber == '') {
-    display = display / Number(convert2);
+if (Number(convert1) == 0 && Number(convert2) == 0) {
+    display = display * 1;
+    console.log(display);
+}
+else if (Number(convert1) == 0) {
+    display = Number(convert2);
+    console.log(display);
+}
+else if (Number(convert2) == 0 && display >= 1){
+    display = display * 1;
     console.log(display);
 }
 else if (Number(convert2) == 0) {
-    display = "Why?";
+    display = Number(convert1);
     console.log(display);
-    display = 0; //will reset calculator after the error message is displayed
+}
+else if (startNumber == '') {
+    display = display / Number(convert2);
+    console.log(display);
+}
+else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
+    display += Number(convert1) / Number(convert2);
+    console.log(display);
 }
 
 let start2 = document.querySelectorAll(".number2");
@@ -239,7 +253,7 @@ function clearCalc() { //clears calculator
     number.classList.add("number3");
     number.textContent = ''; 
 
-    //stops it from forceEval
+    //stops it from forceEval when clearing
     let seven = document.querySelector(".numpad1");
     seven.removeEventListener("click", addDifNum1);
 
