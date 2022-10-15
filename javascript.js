@@ -18,6 +18,8 @@ let removeDisplay = 0;//removes the first display after second sum of display is
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
+    removeDisplayNum();
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
@@ -43,12 +45,12 @@ endNumber = [];
 forceEval = 0;
 
 removeDisplay++;
-
-removeDisplayNum();
 };
 
 
 const subtract = function(arr1, arr2) {
+    removeDisplayNum();
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
@@ -75,12 +77,12 @@ endNumber = [];
 forceEval = 0;
 
 removeDisplay++;
-
-removeDisplayNum();
 };
     //console.log(subtract(5, 2));
 
 const multiply = function(arr1, arr2) {
+    removeDisplayNum();
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
@@ -106,12 +108,12 @@ endNumber = [];
 removeDisplay++;
 
 forceEval = 0;
-
-removeDisplayNum();
 };
     //console.log(multiply(5, 5));
 
 const divide = function(arr1, arr2) {
+    removeDisplayNum();
+
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
@@ -137,8 +139,6 @@ endNumber = [];
 forceEval = 0;
 
 removeDisplay++;
-
-removeDisplayNum();
 };
     //console.log(divide(12, 3));
 
@@ -170,12 +170,14 @@ function startCalc() { //clears beginning 0
 function removeDisplayNum() {
     let first = document.querySelector(".number3");
 
-    if (removeDisplay == 2) { // to get rid of the numbers displayed after the sum is displayed
+    if (removeDisplay == 1) { // to get rid of the numbers displayed after the sum is displayed
         first.remove();
+        removeDisplay = 0;
         }
-    else if (display == 0) {
-        first.textContent = "Why are you trying to do that?"
-    }
+    //if (removeDisplay == 2 && display == 0) {
+        //first.textContent = "Why are you trying to do that?"
+        //removeDisplay = 0;
+   //}
 }
 
 
