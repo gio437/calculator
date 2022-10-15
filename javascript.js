@@ -129,6 +129,10 @@ if (startNumber == '') {
     display = display / Number(convert2);
     console.log(display);
 }
+else if (Number(convert2) == 0) {
+    display = "Why?";
+    console.log(display);
+}
 
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
@@ -184,10 +188,6 @@ function removeDisplayNum() {
         first.remove();
         removeDisplay = 0;
         }
-    //if (removeDisplay == 2 && display == 0) {
-        //first.textContent = "Why are you trying to do that?"
-        //removeDisplay = 0;
-   //}
 }
 
 
@@ -398,6 +398,10 @@ function divideAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
+
+        function removeListeners() {
+
+        }
 }
 
 function addDifNum1() {
@@ -756,11 +760,8 @@ function displayValue(val) {
             break;
     }
 
-    let first = document.querySelector(".number3");
-
     if (removeDisplay >= 1) { // to get rid of the numbers displayed after the sum is displayed
-        first.remove();
-        removeDisplay = 0;
+        removeDisplayNum();
         };
     }
 
@@ -823,11 +824,9 @@ function displayValue2(val) {
             set = 0;
             break;
     }
-    let first = document.querySelector(".number3");
 
     if (removeDisplay >= 1) { // to get rid of the numbers displayed after the sum is displayed
-        first.remove();
-        removeDisplay = 0;
+        removeDisplayNum();
         }
     }
 
