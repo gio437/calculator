@@ -238,6 +238,37 @@ function clearCalc() { //clears calculator
 
     number.classList.add("number3");
     number.textContent = ''; 
+
+    //stops it from forceEval
+    let seven = document.querySelector(".numpad1");
+    seven.removeEventListener("click", addDifNum1);
+
+    let eight = document.querySelector(".numpad2");
+    eight.removeEventListener("click", addDifNum2);
+
+    let nine = document.querySelector(".numpad3");
+    nine.removeEventListener("click", addDifNum3);
+
+    let four = document.querySelector(".numpad4");
+    four.removeEventListener("click", addDifNum4);
+
+    let five = document.querySelector(".numpad5");
+    five.removeEventListener("click", addDifNum5);
+
+    let six = document.querySelector(".numpad6");
+    six.removeEventListener("click", addDifNum6);
+
+    let one = document.querySelector(".numpad7");
+    one.removeEventListener("click", addDifNum7);
+
+    let two = document.querySelector(".numpad8");
+    two.removeEventListener("click", addDifNum8);
+
+    let three = document.querySelector(".numpad9");
+    three.removeEventListener("click", addDifNum9);
+
+    let zero = document.getElementById("zero");
+    zero.removeEventListener("click", addDifNum10);
 }
 
 
