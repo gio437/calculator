@@ -2,6 +2,8 @@
 let turnOff = 0;
 let display = 0;
 let forceEval = 0;
+let set = 0;
+let val = 0;
 //let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
 let endNumber = [];
@@ -11,7 +13,7 @@ let multiplication = 0;
 let division = 0;
 let subtraction = 0;
 
-let equalTwice = 0
+let equalTwice = 0; //allows you to spam a number addition
 
 
 //turns array into a number =>
@@ -32,7 +34,7 @@ let number = document.createElement("div");
     
 show.appendChild(number);
 
-number.classList.add("number2");
+number.classList.add("number3");
 number.textContent = display;
 
 startNumber = [];
@@ -60,7 +62,7 @@ let number = document.createElement("div");
     
 show.appendChild(number);
 
-number.classList.add("number2");
+number.classList.add("number3");
 number.textContent = display;
 
 startNumber = [];
@@ -87,7 +89,7 @@ let number = document.createElement("div");
     
 show.appendChild(number);
 
-number.classList.add("number2");
+number.classList.add("number3");
 number.textContent = display;
 
 startNumber = [];
@@ -101,7 +103,7 @@ const divide = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-let start2 = document.querySelectorAll(".number2");
+let start2 = document.querySelectorAll(".number3");
     for (let i = 0; i < start2.length; i++) {
         start2[i].remove();
     }
@@ -111,7 +113,7 @@ let number = document.createElement("div");
     
 show.appendChild(number);
 
-number.classList.add("number2");
+number.classList.add("number3");
 number.textContent = display;
 
 display /= Number(convert1) + Number(convert2);
@@ -157,6 +159,18 @@ function clearCalc() { //clears calculator
     num = 0;
     turnOff = 0;
     forceEval = 0;
+    set = 0;
+    val = 0;
+
+    startNumber = [];
+    endNumber = [];
+
+    addition = 0;
+    multiplication = 0;
+    division = 0;
+    subtraction = 0;
+
+    equalTwice = 0;
 
     let start = document.querySelectorAll(".number");
     for (let i = 0; i < start.length; i++) {
@@ -168,9 +182,14 @@ function clearCalc() { //clears calculator
         start2[i].remove();
     }
 
-    let start3 = document.querySelector(".begin");
-    start3.classList.add("start");
-    start3.textContent = "0";
+    let start3 = document.querySelectorAll(".number3");
+    for (let i = 0; i < start3.length; i++) {
+        start3[i].remove();
+    }
+
+    let start4 = document.querySelector(".begin");
+    start4.classList.add("start");
+    start4.textContent = "0";
 }
 
 
@@ -392,7 +411,7 @@ function addDifNum10() {
     makeValue();
 }
 
-let set = 0; //picks the number for the second array //set is becoming only the first value**
+//picks the number for the second array //set is becoming only the first value**
 
 function makeValue() {
 forceEval = 1;
@@ -433,7 +452,6 @@ forceEval = 1;
         val = 1;
         displayValue2(val);
         break;
-    
     case 2:
         endNumber.push(2);
         val = 2;
@@ -637,6 +655,7 @@ if (division == 1) {
     division = 0;
 }
 
+
 function displayValue(val) {
     let display = document.querySelector(".text");
     let number = document.createElement("div");
@@ -697,15 +716,21 @@ function displayValue(val) {
             set = 0;
             break;
     }
+
+    let first = document.querySelectorAll(".number");
+
+    if (display > 0) { // to get rid of the numbers displayed after the sum is displayed
+        for (let i = 0; i < first.length; i++) {
+        first[i].remove();
+        }
+    }
 }
 
 function displayValue2(val) {
     let display = document.querySelector(".text");
     let number = document.createElement("div");
     
-
     display.appendChild(number);
-
 
     switch(val) {
         case 7:
@@ -758,6 +783,13 @@ function displayValue2(val) {
             number.textContent = 0;
             set = 0;
             break;
+    }
+    let first = document.querySelectorAll(".number2");
+
+    if (display >= 1) { // to get rid of the numbers displayed after the sum is displayed
+        for (let i = 0; i < first.length; i++) {
+        first[i].remove();
+        }
     }
 }
 
