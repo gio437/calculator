@@ -89,6 +89,11 @@ let convert2 = arr2.join('');
 display += Number(convert1) * Number(convert2);
 console.log(display);
 
+if (startNumber == '') {
+    display = display * Number(convert2);
+    console.log(display);
+}
+
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
         start2[i].remove();
@@ -119,6 +124,11 @@ let convert2 = arr2.join('');
 
 display += Number(convert1) / Number(convert2);
 console.log(display);
+
+if (startNumber == '') {
+    display = display / Number(convert2);
+    console.log(display);
+}
 
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
