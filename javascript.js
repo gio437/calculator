@@ -123,13 +123,9 @@ const divide = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-
+//will prevent calc from crashing after dividing by 0
 if (Number(convert1) == 0 && Number(convert2) == 0) {
     display = display * 1;
-    console.log(display);
-}
-else if (Number(convert1) == 0) {
-    display = Number(convert2);
     console.log(display);
 }
 else if (Number(convert2) == 0 && display >= 1){
@@ -142,12 +138,15 @@ else if (Number(convert2) == 0) {
 }
 else if (startNumber == '') {
     display = display / Number(convert2);
+    display = Math.round(display);
     console.log(display);
 }
 else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
     display += Number(convert1) / Number(convert2);
     console.log(display);
 }
+
+display = Math.round(display * 100) / 100;
 
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
