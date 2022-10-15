@@ -243,15 +243,12 @@ minus.addEventListener("click", subtractAgain);
 let half = document.getElementById("operator1");
 half.addEventListener("click", divideAgain);
 
+
 function addAgain() {
     turnOff = 1;
     addition = 1;
 
     if (forceEval == 1) {
-        let displayOutput = document.querySelectorAll(".number3");
-        for (let i = 0; i < displayOutput.length; i++) {
-            displayOutput[i].remove();
-        }
         addTogether();
     }
    
@@ -291,10 +288,6 @@ function multiplyAgain() {
     multiplication = 1;
 
     if (forceEval == 1) {
-        let displayOutput = document.querySelectorAll(".number3");
-        for (let i = 0; i < displayOutput.length; i++) {
-            displayOutput[i].remove();
-        }
         addTogether();
     }
    
@@ -334,10 +327,6 @@ function subtractAgain() {
     subtraction = 1;
 
     if (forceEval == 1) {
-        let displayOutput = document.querySelectorAll(".number3");
-        for (let i = 0; i < displayOutput.length; i++) {
-            displayOutput[i].remove();
-        }
         addTogether();
     }
    
@@ -377,10 +366,6 @@ function divideAgain() {
     division = 1;
 
     if (forceEval == 1) {
-        let displayOutput = document.querySelectorAll(".number3");
-        for (let i = 0; i < displayOutput.length; i++) {
-            displayOutput[i].remove();
-        }
         addTogether();
     }
    
@@ -771,16 +756,14 @@ function displayValue(val) {
             break;
     }
 
-    let first = document.querySelectorAll(".number");
-   
-    if (display >= 1) { // to get rid of the numbers displayed after the sum is displayed
-        for (let i = 0; i < first.length; i++) {
-        first[i].remove();
-        }
+    let first = document.querySelector(".number3");
+
+    if (removeDisplay >= 1) { // to get rid of the numbers displayed after the sum is displayed
+        first.remove();
+        removeDisplay = 0;
+        };
     }
-   
-    
-}
+
 
 function displayValue2(val) {
     let display = document.querySelector(".text");
@@ -840,13 +823,13 @@ function displayValue2(val) {
             set = 0;
             break;
     }
-    let first = document.querySelectorAll(".number2");
+    let first = document.querySelector(".number3");
 
-    if (display >= 1) { // to get rid of the numbers displayed after the sum is displayed
-        for (let i = 0; i < first.length; i++) {
-        first[i].remove();
+    if (removeDisplay >= 1) { // to get rid of the numbers displayed after the sum is displayed
+        first.remove();
+        removeDisplay = 0;
         }
     }
-}
+
 
 
