@@ -132,6 +132,7 @@ if (startNumber == '') {
 else if (Number(convert2) == 0) {
     display = "Why?";
     console.log(display);
+    display = 0; //will reset calculator after the error message is displayed
 }
 
 let start2 = document.querySelectorAll(".number2");
@@ -398,10 +399,6 @@ function divideAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
-
-        function removeListeners() {
-
-        }
 }
 
 function addDifNum1() {
