@@ -229,6 +229,15 @@ function clearCalc() { //clears calculator
     let start4 = document.querySelector(".begin");
     start4.classList.add("start");
     start4.textContent = "0";
+
+    //creates a display element after clearing
+    let show = document.querySelector(".text");
+    let number = document.createElement("div");
+    
+    show.appendChild(number);
+
+    number.classList.add("number3");
+    number.textContent = ''; 
 }
 
 
