@@ -26,6 +26,8 @@ let convert2 = arr2.join('');
 display += Number(convert1) + Number(convert2);
 console.log(display);
 
+display = Math.round(display * 100) / 100;
+
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
         start2[i].remove();
@@ -57,6 +59,7 @@ let convert2 = arr2.join('');
 display += Number(convert1) - Number(convert2);
 console.log(display);
 
+display = Math.round(display * 100) / 100;
 
 let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
@@ -88,6 +91,8 @@ let convert2 = arr2.join('');
 
 display += Number(convert1) * Number(convert2);
 console.log(display);
+
+display = Math.round(display * 100) / 100;
 
 if (startNumber == '') {
     display = display * Number(convert2);
@@ -282,6 +287,9 @@ function clearCalc() { //clears calculator
 
     let zero = document.getElementById("zero");
     zero.removeEventListener("click", addDifNum10);
+
+    let pad11 = document.querySelector(".numpad10");
+    pad11.removeEventListener("click", addDifNum11);
 }
 
 
@@ -335,7 +343,12 @@ function addAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
+
+        let pad11 = document.querySelector(".numpad10");
+        pad11.addEventListener("click", addDifNum11);
 }
+
+
 
 function multiplyAgain() {
     turnOff = 1;
@@ -374,6 +387,9 @@ function multiplyAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
+
+        let pad11 = document.querySelector(".numpad10");
+        pad11.addEventListener("click", addDifNum11);
 }
 
 function subtractAgain() {
@@ -413,6 +429,9 @@ function subtractAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
+
+        let pad11 = document.querySelector(".numpad10");
+        pad11.addEventListener("click", addDifNum11);
 }
 
 function divideAgain() {
@@ -452,6 +471,9 @@ function divideAgain() {
 
         let zero = document.getElementById("zero");
         zero.addEventListener("click", addDifNum10);
+
+        let pad11 = document.querySelector(".numpad10");
+        pad11.addEventListener("click", addDifNum11);
 }
 
 function addDifNum1() {
@@ -501,6 +523,11 @@ function addDifNum9() {
 
 function addDifNum10() {
     set = 0;
+    makeValue();
+}
+
+function addDifNum11() {
+    set = '.';
     makeValue();
 }
 
@@ -560,6 +587,13 @@ forceEval = 1;
         val = 0;
         displayValue2(val);
         break;
+    case '.':
+        endNumber.push('.');
+        val = '.';
+        displayValue2(val);
+        let pad11 = document.querySelector(".numpad10");
+        pad11.removeEventListener("click", addDifNum11);
+        break;
    }
 
 
@@ -609,10 +643,10 @@ let pad2 = document.querySelector(".numpad3");
 
 function createValue3() {
     if (turnOff == 0) {
-    startNumber.push(9);
-    let val = 9;
-    displayValue(val);
-    startCalc();
+        startNumber.push(9);
+        let val = 9;
+        displayValue(val);
+        startCalc();
     }
     else {
         return;
@@ -624,10 +658,10 @@ let pad3 = document.querySelector(".numpad4");
 
 function createValue4() {
     if (turnOff == 0) {
-    startNumber.push(4);
-    let val = 4;
-    displayValue(val);
-    startCalc();
+        startNumber.push(4);
+        let val = 4;
+        displayValue(val);
+        startCalc();
     }
     else {
         return;
@@ -639,10 +673,10 @@ let pad4 = document.querySelector(".numpad5");
 
 function createValue5() {
     if (turnOff == 0) {
-    startNumber.push(5);
-    let val = 5;
-    displayValue(val);
-    startCalc();
+        startNumber.push(5);
+        let val = 5;
+        displayValue(val);
+        startCalc();
      } else {
         return;
     }
@@ -653,10 +687,10 @@ let pad5 = document.querySelector(".numpad6");
 
 function createValue6() {
     if (turnOff == 0) {
-    startNumber.push(6);
-    let val = 6;
-    displayValue(val);
-    startCalc();
+        startNumber.push(6);
+        let val = 6;
+        displayValue(val);
+        startCalc();
     } else {
         return;
     }
@@ -667,10 +701,10 @@ let pad6 = document.querySelector(".numpad7");
 
 function createValue7() {
     if (turnOff == 0) {
-    startNumber.push(1);
-    let val = 1;
-    displayValue(val);
-    startCalc();
+        startNumber.push(1);
+        let val = 1;
+        displayValue(val);
+        startCalc();
     } else {
         return;
     }
@@ -681,10 +715,10 @@ let pad7 = document.querySelector(".numpad8");
 
 function createValue8() {
     if (turnOff == 0) {
-    startNumber.push(2);
-    let val = 2;
-    displayValue(val);
-    startCalc();
+        startNumber.push(2);
+        let val = 2;
+        displayValue(val);
+        startCalc();
     } else {
         return;
     }
@@ -695,10 +729,10 @@ let pad8 = document.querySelector(".numpad9");
 
 function createValue9() {
     if (turnOff == 0) {
-    startNumber.push(3);
-    let val = 3;
-    displayValue(val);
-    startCalc();
+        startNumber.push(3);
+        let val = 3;
+        displayValue(val);
+        startCalc();
     } else {
         return;
     }
@@ -710,14 +744,33 @@ let pad10 = document.getElementById("zero");
 
 function createValue10() {
     if (turnOff == 0) {
-    startNumber.push(0);
-    let val = 0;
-    displayValue(val);
-    startCalc();
+        startNumber.push(0);
+        let val = 0;
+        displayValue(val);
+        startCalc();
     } else { 
         return;
     }
 }
+
+let pad11 = document.querySelector(".numpad10");
+pad11.addEventListener("click", createValue11);
+
+function createValue11() {
+    if (turnOff == 0) {
+        startNumber.push('.'); 
+        val = '.';
+        displayValue(val);
+        startCalc();
+
+        pad11.removeEventListener("click", createValue11);
+    }
+    else {
+        return;
+    }
+}
+
+
 // end of number click events
 
 function addTogether() { //adds the inputs together
@@ -808,6 +861,11 @@ function displayValue(val) {
             number.textContent = 0;
             set = 0;
             break;
+        case '.':
+            number.classList.add("number");
+            number.textContent = '.';
+            set = '.';
+            break;
     }
 
     if (removeDisplay >= 1) { // to get rid of the numbers displayed after the sum is displayed
@@ -872,6 +930,11 @@ function displayValue2(val) {
             number.classList.add("number2");
             number.textContent = 0;
             set = 0;
+            break;
+        case '.':
+            number.classList.add("number2");
+            number.textContent = '.';
+            set = '.';
             break;
     }
 
