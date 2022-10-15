@@ -2,8 +2,7 @@
 let turnOff = 0;
 let display = 0;
 let forceEval = 0;
-let set = 0;
-let val = 0;
+
 //let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
 let endNumber = [];
@@ -76,7 +75,7 @@ const multiply = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
-display *= Number(convert1) + Number(convert2);
+display += Number(convert1) * Number(convert2);
 console.log(display);
 
 let start2 = document.querySelectorAll(".number2");
@@ -116,7 +115,7 @@ show.appendChild(number);
 number.classList.add("number3");
 number.textContent = display;
 
-display /= Number(convert1) + Number(convert2);
+display += Number(convert1) / Number(convert2);
 console.log(display);
 
 startNumber = [];
@@ -159,9 +158,7 @@ function clearCalc() { //clears calculator
     num = 0;
     turnOff = 0;
     forceEval = 0;
-    set = 0;
-    val = 0;
-
+ 
     startNumber = [];
     endNumber = [];
 
@@ -210,6 +207,10 @@ function addAgain() {
     addition = 1;
 
     if (forceEval == 1) {
+        let displayOutput = document.querySelectorAll(".number3");
+        for (let i = 0; i < displayOutput.length; i++) {
+            displayOutput[i].remove();
+        }
         addTogether();
     }
    
@@ -249,6 +250,10 @@ function multiplyAgain() {
     multiplication = 1;
 
     if (forceEval == 1) {
+        let displayOutput = document.querySelectorAll(".number3");
+        for (let i = 0; i < displayOutput.length; i++) {
+            displayOutput[i].remove();
+        }
         addTogether();
     }
    
@@ -288,6 +293,10 @@ function subtractAgain() {
     subtraction = 1;
 
     if (forceEval == 1) {
+        let displayOutput = document.querySelectorAll(".number3");
+        for (let i = 0; i < displayOutput.length; i++) {
+            displayOutput[i].remove();
+        }
         addTogether();
     }
    
@@ -327,6 +336,10 @@ function divideAgain() {
     division = 1;
 
     if (forceEval == 1) {
+        let displayOutput = document.querySelectorAll(".number3");
+        for (let i = 0; i < displayOutput.length; i++) {
+            displayOutput[i].remove();
+        }
         addTogether();
     }
    
@@ -718,12 +731,14 @@ function displayValue(val) {
     }
 
     let first = document.querySelectorAll(".number");
-
-    if (display > 0) { // to get rid of the numbers displayed after the sum is displayed
+   
+    if (display >= 1) { // to get rid of the numbers displayed after the sum is displayed
         for (let i = 0; i < first.length; i++) {
         first[i].remove();
         }
     }
+   
+    
 }
 
 function displayValue2(val) {
