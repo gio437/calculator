@@ -102,6 +102,9 @@ const divide = function(arr1, arr2) {
 let convert1 = arr1.join('');
 let convert2 = arr2.join('');
 
+display += Number(convert1) / Number(convert2);
+console.log(display);
+
 let start2 = document.querySelectorAll(".number3");
     for (let i = 0; i < start2.length; i++) {
         start2[i].remove();
@@ -114,9 +117,6 @@ show.appendChild(number);
 
 number.classList.add("number3");
 number.textContent = display;
-
-display += Number(convert1) / Number(convert2);
-console.log(display);
 
 startNumber = [];
 endNumber = [];
