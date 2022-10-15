@@ -14,6 +14,7 @@ let subtraction = 0;
 
 let equalTwice = 0; //allows you to spam a number addition
 
+let removeDisplay = 0;//removes the first display after second sum of display is requested
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
@@ -40,6 +41,10 @@ startNumber = [];
 endNumber = [];
 
 forceEval = 0;
+
+removeDisplay++;
+
+removeDisplayNum();
 };
 
 
@@ -68,6 +73,10 @@ startNumber = [];
 endNumber = [];
 
 forceEval = 0;
+
+removeDisplay++;
+
+removeDisplayNum();
 };
     //console.log(subtract(5, 2));
 
@@ -94,7 +103,11 @@ number.textContent = display;
 startNumber = [];
 endNumber = [];
 
+removeDisplay++;
+
 forceEval = 0;
+
+removeDisplayNum();
 };
     //console.log(multiply(5, 5));
 
@@ -105,7 +118,7 @@ let convert2 = arr2.join('');
 display += Number(convert1) / Number(convert2);
 console.log(display);
 
-let start2 = document.querySelectorAll(".number3");
+let start2 = document.querySelectorAll(".number2");
     for (let i = 0; i < start2.length; i++) {
         start2[i].remove();
     }
@@ -122,6 +135,10 @@ startNumber = [];
 endNumber = [];
 
 forceEval = 0;
+
+removeDisplay++;
+
+removeDisplayNum();
 };
     //console.log(divide(12, 3));
 
@@ -149,6 +166,18 @@ function startCalc() { //clears beginning 0
         return;
     }
 }
+
+function removeDisplayNum() {
+    let first = document.querySelector(".number3");
+
+    if (removeDisplay == 2) { // to get rid of the numbers displayed after the sum is displayed
+        first.remove();
+        }
+    else if (display == 0) {
+        first.textContent = "Why are you trying to do that?"
+    }
+}
+
 
 let clear = document.getElementById("clear");
 clear.addEventListener("click", clearCalc);
