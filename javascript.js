@@ -89,13 +89,15 @@ const multiply = function(arr1, arr2) {
     let convert1 = arr1.join('');
     let convert2 = arr2.join('');
 
-    display += Number(convert1) * Number(convert2);
-        console.log(display);
 
     display = Math.round(display * 100) / 100;
 
     if (convert1 == '') { //fix bug with adding multiple operators in a row without equals
         display = display * Number(convert2);
+        console.log(display);
+    }
+    else {
+        display += Number(convert1) * Number(convert2);
         console.log(display);
     }
 
