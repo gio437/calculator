@@ -20,104 +20,104 @@ let removeDisplay = 0;//removes the first display after second sum of display is
 const sum = function(arr1, arr2) { //add array function
     removeDisplayNum();
 
-let convert1 = arr1.join('');
-let convert2 = arr2.join('');
+    let convert1 = arr1.join('');
+    let convert2 = arr2.join('');
 
-display += Number(convert1) + Number(convert2);
-console.log(display);
+    display += Number(convert1) + Number(convert2);
+    console.log(display);
 
-display = Math.round(display * 100) / 100;
+    display = Math.round(display * 100) / 100;
 
-let start2 = document.querySelectorAll(".number2");
-    for (let i = 0; i < start2.length; i++) {
-        start2[i].remove();
-    }
+    let start2 = document.querySelectorAll(".number2");
+        for (let i = 0; i < start2.length; i++) {
+            start2[i].remove();
+        }
 
-let show = document.querySelector(".text");
-let number = document.createElement("div");
-    
-show.appendChild(number);
+    let show = document.querySelector(".text");
+    let number = document.createElement("div");
+        
+    show.appendChild(number);
 
-number.classList.add("number3");
-number.textContent = display;
+    number.classList.add("number3");
+    number.textContent = display;
 
-startNumber = [];
-endNumber = [];
+    startNumber = [];
+    endNumber = [];
 
-forceEval = 0;
+    forceEval = 0;
 
-removeDisplay++;
+    removeDisplay++;
 };
 
 
 const subtract = function(arr1, arr2) {
     removeDisplayNum();
 
-let convert1 = arr1.join('');
-let convert2 = arr2.join('');
+    let convert1 = arr1.join('');
+    let convert2 = arr2.join('');
 
-display += Number(convert1) - Number(convert2);
-console.log(display);
+    display += Number(convert1) - Number(convert2);
+    console.log(display);
 
-display = Math.round(display * 100) / 100;
+    display = Math.round(display * 100) / 100;
 
-let start2 = document.querySelectorAll(".number2");
-    for (let i = 0; i < start2.length; i++) {
-        start2[i].remove();
-    }
+    let start2 = document.querySelectorAll(".number2");
+        for (let i = 0; i < start2.length; i++) {
+            start2[i].remove();
+        }
 
-let show = document.querySelector(".text");
-let number = document.createElement("div");
-    
-show.appendChild(number);
+    let show = document.querySelector(".text");
+    let number = document.createElement("div");
+        
+    show.appendChild(number);
 
-number.classList.add("number3");
-number.textContent = display;
+    number.classList.add("number3");
+    number.textContent = display;
 
-startNumber = [];
-endNumber = [];
+    startNumber = [];
+    endNumber = [];
 
-forceEval = 0;
+    forceEval = 0;
 
-removeDisplay++;
+    removeDisplay++;
 };
     //console.log(subtract(5, 2));
 
 const multiply = function(arr1, arr2) {
     removeDisplayNum();
 
-let convert1 = arr1.join('');
-let convert2 = arr2.join('');
+    let convert1 = arr1.join('');
+    let convert2 = arr2.join('');
 
-display += Number(convert1) * Number(convert2);
-console.log(display);
-
-display = Math.round(display * 100) / 100;
-
-if (startNumber == '') {
-    display = display * Number(convert2);
+    display += Number(convert1) * Number(convert2);
     console.log(display);
-}
 
-let start2 = document.querySelectorAll(".number2");
-    for (let i = 0; i < start2.length; i++) {
-        start2[i].remove();
+    display = Math.round(display * 100) / 100;
+
+    if (startNumber == '') {
+        display = display * Number(convert2);
+        console.log(display);
     }
 
-let show = document.querySelector(".text");
-let number = document.createElement("div");
-    
-show.appendChild(number);
+    let start2 = document.querySelectorAll(".number2");
+        for (let i = 0; i < start2.length; i++) {
+            start2[i].remove();
+        }
 
-number.classList.add("number3");
-number.textContent = display;
+    let show = document.querySelector(".text");
+    let number = document.createElement("div");
+        
+    show.appendChild(number);
 
-startNumber = [];
-endNumber = [];
+    number.classList.add("number3");
+    number.textContent = display;
 
-removeDisplay++;
+    startNumber = [];
+    endNumber = [];
 
-forceEval = 0;
+    removeDisplay++;
+
+    forceEval = 0;
 };
     //console.log(multiply(5, 5));
 
@@ -125,54 +125,57 @@ const divide = function(arr1, arr2) {
     removeDisplayNum();
 
 
-let convert1 = arr1.join('');
-let convert2 = arr2.join('');
+    let convert1 = arr1.join('');
+    let convert2 = arr2.join('');
 
-//will prevent calc from crashing after dividing by 0
-if (Number(convert1) == 0 && Number(convert2) == 0) {
-    display = display * 1;
-    console.log(display);
-}
-else if (Number(convert2) == 0 && display >= 1){
-    display = display * 1;
-    console.log(display);
-}
-else if (Number(convert2) == 0) {
-    display = Number(convert1);
-    console.log(display);
-}
-else if (startNumber == '') {
-    display = display / Number(convert2);
-    display = Math.round(display);
-    console.log(display);
-}
-else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
-    display += Number(convert1) / Number(convert2);
-    console.log(display);
-}
-
-display = Math.round(display * 100) / 100;
-
-let start2 = document.querySelectorAll(".number2");
-    for (let i = 0; i < start2.length; i++) {
-        start2[i].remove();
+    //will prevent calc from crashing after dividing by 0
+    if (Number(convert1) == 0 && Number(convert2) == 0) {
+        display = display * 1;
+        console.log(display);
+    }
+    else if (Number(convert2) == 0 && display >= 1){
+        display = display * 1;
+        console.log(display);
+    }
+    else if (Number(convert2) == 0) {
+        display = Number(convert1);
+        console.log(display);
+    }
+    else if (startNumber == '') {
+        display = display / Number(convert2);
+        display = Math.round(display);
+        console.log(display);
+    }
+    else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
+        display += Number(convert1) / Number(convert2);
+        console.log(display);
     }
 
-let show = document.querySelector(".text");
-let number = document.createElement("div");
-    
-show.appendChild(number);
+    display = Math.round(display * 100) / 100;
 
-number.classList.add("number3");
-number.textContent = display;
+    let start2 = document.querySelectorAll(".number2");
+        for (let i = 0; i < start2.length; i++) {
+            start2[i].remove();
+        }
 
-startNumber = [];
-endNumber = [];
+    let show = document.querySelector(".text");
+    let number = document.createElement("div");
+        
+    show.appendChild(number);
 
-forceEval = 0;
+    number.classList.add("number3");
+    number.textContent = display;
 
-removeDisplay++;
+    startNumber = [];
+    endNumber = [];
+
+    forceEval = 0;
+
+    removeDisplay++;
 };
+
+
+
     //console.log(divide(12, 3));
 
 const operate = function(name, num1, num2) {

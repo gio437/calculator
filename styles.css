@@ -51,6 +51,21 @@ button:active {
     font-size: 0;
 }
 
+.number {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.number2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.number3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 .text {
     margin-top: 25px;
