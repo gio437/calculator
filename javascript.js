@@ -143,7 +143,6 @@ const divide = function(arr1, arr2) {
     }
     else if (startNumber == '') {
         display = display / Number(convert2);
-        display = Math.round(display);
         console.log(display);
     }
     else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
