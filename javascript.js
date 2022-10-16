@@ -642,6 +642,9 @@ forceEval = 1;
     
     let equal = document.getElementById("operator5"); //the equals function
     equal.addEventListener("click", addTogether);
+    equal.addEventListener("click", multiplyTogether);
+    equal.addEventListener("click", subtractTogether);
+    equal.addEventListener("click", divideTogether);
 }
 
 
