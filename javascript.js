@@ -12,7 +12,7 @@ let multiplication = 0;
 let division = 0;
 let subtraction = 0;
 
-let equalTwice = 0; //allows you to spam a number addition
+let equalTwice = 0; //allows you to spam a number addition with equals, not yet implemented
 
 let removeDisplay = 0;//removes the first display after second sum of display is requested
 
@@ -44,7 +44,7 @@ const sum = function(arr1, arr2) { //add array function
     startNumber = [];
     endNumber = [];
 
-    forceEval = 0;
+    addition = 0;
 
     removeDisplay++;
 };
@@ -76,8 +76,8 @@ const subtract = function(arr1, arr2) {
 
     startNumber = [];
     endNumber = [];
-
-    forceEval = 0;
+    
+    subtraction = 0;
 
     removeDisplay++;
 };
@@ -90,11 +90,11 @@ const multiply = function(arr1, arr2) {
     let convert2 = arr2.join('');
 
     display += Number(convert1) * Number(convert2);
-    console.log(display);
+        console.log(display);
 
     display = Math.round(display * 100) / 100;
 
-    if (startNumber == '') {
+    if (convert1 == '') { //fix bug with adding multiple operators in a row without equals
         display = display * Number(convert2);
         console.log(display);
     }
@@ -117,7 +117,7 @@ const multiply = function(arr1, arr2) {
 
     removeDisplay++;
 
-    forceEval = 0;
+    multiplication = 0;
 };
     //console.log(multiply(5, 5));
 
@@ -168,7 +168,7 @@ const divide = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    forceEval = 0;
+    division = 0;
 
     removeDisplay++;
 };
@@ -312,7 +312,16 @@ function addAgain() {
     turnOff = 1;
     addition = 1;
 
-    if (forceEval == 1) {
+    if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
+    }
+    else if (forceEval == 1 && addition == 1) {
         addTogether();
     }
    
@@ -356,8 +365,17 @@ function multiplyAgain() {
     turnOff = 1;
     multiplication = 1;
 
-    if (forceEval == 1) {
+    if (forceEval == 1 && addition == 1) {
         addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
     }
    
         let seven = document.querySelector(".numpad1");
@@ -398,8 +416,17 @@ function subtractAgain() {
     turnOff = 1;
     subtraction = 1;
 
-    if (forceEval == 1) {
+    if (forceEval == 1 && addition == 1) {
         addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
     }
    
         let seven = document.querySelector(".numpad1");
@@ -440,8 +467,17 @@ function divideAgain() {
     turnOff = 1;
     division = 1;
 
-    if (forceEval == 1) {
+    if (forceEval == 1 && addition == 1) {
         addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
     }
    
         let seven = document.querySelector(".numpad1");
@@ -776,32 +812,38 @@ function createValue11() {
 // end of number click events
 
 function addTogether() { //adds the inputs together
-if (addition == 1) {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(sum, startNumber, endNumber);
-}
-if (multiplication == 1) {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(multiply, startNumber, endNumber);
-}
-if (subtraction == 1) {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(subtract, startNumber, endNumber);
-}
-if (division == 1) {
-    console.log(startNumber);
-    console.log(endNumber);
-    operate(divide, startNumber, endNumber);
+    if (addition == 1) {
+        console.log(startNumber);
+        console.log(endNumber);
+        operate(sum, startNumber, endNumber);
+    }
 }
 
-    addition = 0;
-    multiplication = 0;
-    subtraction = 0;
-    division = 0;
+function subtractTogether() {
+    if (subtraction == 1) {
+        console.log(startNumber);
+        console.log(endNumber);
+        operate(subtract, startNumber, endNumber);
+    }
 }
+
+function multiplyTogether() {
+    if (multiplication == 1) {
+        console.log(startNumber);
+        console.log(endNumber);
+        operate(multiply, startNumber, endNumber);
+    }
+}
+
+
+function divideTogether() {
+    if (division == 1) {
+        console.log(startNumber);
+        console.log(endNumber);
+        operate(divide, startNumber, endNumber);
+    }
+}
+
 
 
 function displayValue(val) {
