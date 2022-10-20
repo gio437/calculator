@@ -46,7 +46,7 @@ const sum = function(arr1, arr2) { //add array function
 
     addition = 0;
 
-    removeDisplay++;
+    removeDisplay = 1;
 };
 
 
@@ -79,7 +79,7 @@ const subtract = function(arr1, arr2) {
     
     subtraction = 0;
 
-    removeDisplay++;
+    removeDisplay = 1;
 };
     //console.log(subtract(5, 2));
 
@@ -88,18 +88,31 @@ const multiply = function(arr1, arr2) {
 
     let convert1 = arr1.join('');
     let convert2 = arr2.join('');
+    
 
-
-    display = Math.round(display * 100) / 100;
-
-    if (convert1 == '') { //fix bug with adding multiple operators in a row without equals
+    if (Number(convert1) == 0 && Number(convert2) == 0) {
+        display = display * 1;
+        console.log(display);
+    }
+    else if (Number(convert2) == 0 && display >= 1){
+        display = display * 1;
+        console.log(display);
+    }
+    else if (Number(convert2) == 0) {
+        display = Number(convert1);
+        console.log(display);
+    }
+    else if (startNumber == '') {
         display = display * Number(convert2);
         console.log(display);
     }
-    else {
-        display += Number(convert1) * Number(convert2);
+    else if (Number(convert1 >= 1) && Number(convert2 >= 1)){
+        display = Number(convert1) * Number(convert2);
         console.log(display);
     }
+
+    display = Math.round(display * 100) / 100;
+
 
     let start2 = document.querySelectorAll(".number2");
         for (let i = 0; i < start2.length; i++) {
@@ -117,9 +130,9 @@ const multiply = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    removeDisplay++;
-
     multiplication = 0;
+
+    removeDisplay = 1;
 };
     //console.log(multiply(5, 5));
 
@@ -172,7 +185,7 @@ const divide = function(arr1, arr2) {
 
     division = 0;
 
-    removeDisplay++;
+    removeDisplay = 1;
 };
 
 
@@ -209,9 +222,10 @@ function removeDisplayNum() {
 
     if (removeDisplay == 1) { // to get rid of the numbers displayed after the sum is displayed
         first.remove();
+    }
         removeDisplay = 0;
-        }
 }
+
 
 
 let clear = document.getElementById("clear");
@@ -222,6 +236,7 @@ function clearCalc() { //clears calculator
     num = 0;
     turnOff = 0;
     forceEval = 0;
+    removeDisplay = 1;
  
     startNumber = [];
     endNumber = [];
