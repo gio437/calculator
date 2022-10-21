@@ -3,7 +3,6 @@ let turnOff = 0;
 let display = 0;
 let forceEval = 0;
 
-//let startNumber = Number(grabValue.join("")) //maybequeryselectorAll the values from the numbers div?  add them together?
 let startNumber = [];
 let endNumber = [];
 
@@ -14,7 +13,7 @@ let subtraction = 0;
 
 let equalTwice = 0; //allows you to spam a number addition with equals, not yet implemented
 
-let removeDisplay = 0;//removes the first display after second sum of display is requested
+let removeDisplay = 0; //removes the first display after second sum of display is requested
 
 //turns array into a number =>
 const sum = function(arr1, arr2) { //add array function
@@ -44,7 +43,7 @@ const sum = function(arr1, arr2) { //add array function
     startNumber = [];
     endNumber = [];
 
-    //addition = 0;
+    addition = 0;
 
     removeDisplay = 1;
 };
@@ -77,11 +76,11 @@ const subtract = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
     
-    //subtraction = 0;
+    subtraction = 0;
 
     removeDisplay = 1;
 };
-    //console.log(subtract(5, 2));
+  
 
 const multiply = function(arr1, arr2) {
     removeDisplayNum();
@@ -130,11 +129,11 @@ const multiply = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    //multiplication = 0;
+    multiplication = 0;
 
     removeDisplay = 1;
 };
-    //console.log(multiply(5, 5));
+   
 
 const divide = function(arr1, arr2) {
     removeDisplayNum();
@@ -183,19 +182,16 @@ const divide = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    //division = 0;
+    division = 0;
 
     removeDisplay = 1;
 };
 
 
-
-    //console.log(divide(12, 3));
-
 const operate = function(name, num1, num2) {
     return name(num1, num2);
 };
-    //console.log(operate(multiply, 3, 9));
+
 
 // end of operator functions
 
@@ -327,13 +323,18 @@ half.addEventListener("click", divideAgain);
 
 function addAgain() {
     turnOff = 1;
-
     addition = 1;
-    subtraction = 0;
-    multiplication = 0;
-    division = 0;
 
-    if (forceEval == 1 && addition == 1) {
+    if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
+    }
+    else if (forceEval == 1 && addition == 1) {
         addTogether();
     }
    
@@ -375,14 +376,19 @@ function addAgain() {
 
 function multiplyAgain() {
     turnOff = 1;
-
     multiplication = 1;
-    addition = 0;
-    subtraction = 0;
-    division = 0;
 
-    if (forceEval == 1 && multiplication == 1) {
+    if (forceEval == 1 && addition == 1) {
+        addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
         multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
     }
    
         let seven = document.querySelector(".numpad1");
@@ -421,16 +427,21 @@ function multiplyAgain() {
 
 function subtractAgain() {
     turnOff = 1;
-
     subtraction = 1;
-    addition = 0;
-    division = 0;
-    multiplication = 0;
 
-    if (forceEval == 1 && subtraction == 1) {
+    if (forceEval == 1 && addition == 1) {
+        addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
         subtractTogether();
     }
-
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
+        divideTogether();
+    }
+   
         let seven = document.querySelector(".numpad1");
         seven.addEventListener("click", addDifNum1);
 
@@ -467,13 +478,18 @@ function subtractAgain() {
 
 function divideAgain() {
     turnOff = 1;
-
     division = 1;
-    addition = 0;
-    subtraction = 0;
-    multiplication = 0;
 
-    if (forceEval == 1 && division == 1) {
+    if (forceEval == 1 && addition == 1) {
+        addTogether();
+    }
+    else if (forceEval == 1 && subtraction == 1) {
+        subtractTogether();
+    }
+    else if (forceEval == 1 && multiplication == 1) {
+        multiplyTogether();
+    }
+    else if (forceEval == 1 && division == 1) {
         divideTogether();
     }
    
