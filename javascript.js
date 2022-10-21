@@ -44,7 +44,7 @@ const sum = function(arr1, arr2) { //add array function
     startNumber = [];
     endNumber = [];
 
-    addition = 0;
+    //addition = 0;
 
     removeDisplay = 1;
 };
@@ -77,7 +77,7 @@ const subtract = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
     
-    subtraction = 0;
+    //subtraction = 0;
 
     removeDisplay = 1;
 };
@@ -130,7 +130,7 @@ const multiply = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    multiplication = 0;
+    //multiplication = 0;
 
     removeDisplay = 1;
 };
@@ -183,7 +183,7 @@ const divide = function(arr1, arr2) {
     startNumber = [];
     endNumber = [];
 
-    division = 0;
+    //division = 0;
 
     removeDisplay = 1;
 };
@@ -327,18 +327,13 @@ half.addEventListener("click", divideAgain);
 
 function addAgain() {
     turnOff = 1;
-    addition = 1;
 
-    if (forceEval == 1 && subtraction == 1) {
-        subtractTogether();
-    }
-    else if (forceEval == 1 && multiplication == 1) {
-        multiplyTogether();
-    }
-    else if (forceEval == 1 && division == 1) {
-        divideTogether();
-    }
-    else if (forceEval == 1 && addition == 1) {
+    addition = 1;
+    subtraction = 0;
+    multiplication = 0;
+    division = 0;
+
+    if (forceEval == 1 && addition == 1) {
         addTogether();
     }
    
@@ -380,19 +375,14 @@ function addAgain() {
 
 function multiplyAgain() {
     turnOff = 1;
-    multiplication = 1;
 
-    if (forceEval == 1 && addition == 1) {
-        addTogether();
-    }
-    else if (forceEval == 1 && subtraction == 1) {
-        subtractTogether();
-    }
-    else if (forceEval == 1 && multiplication == 1) {
+    multiplication = 1;
+    addition = 0;
+    subtraction = 0;
+    division = 0;
+
+    if (forceEval == 1 && multiplication == 1) {
         multiplyTogether();
-    }
-    else if (forceEval == 1 && division == 1) {
-        divideTogether();
     }
    
         let seven = document.querySelector(".numpad1");
@@ -431,21 +421,16 @@ function multiplyAgain() {
 
 function subtractAgain() {
     turnOff = 1;
-    subtraction = 1;
 
-    if (forceEval == 1 && addition == 1) {
-        addTogether();
-    }
-    else if (forceEval == 1 && subtraction == 1) {
+    subtraction = 1;
+    addition = 0;
+    division = 0;
+    multiplication = 0;
+
+    if (forceEval == 1 && subtraction == 1) {
         subtractTogether();
     }
-    else if (forceEval == 1 && multiplication == 1) {
-        multiplyTogether();
-    }
-    else if (forceEval == 1 && division == 1) {
-        divideTogether();
-    }
-   
+
         let seven = document.querySelector(".numpad1");
         seven.addEventListener("click", addDifNum1);
 
@@ -482,18 +467,13 @@ function subtractAgain() {
 
 function divideAgain() {
     turnOff = 1;
-    division = 1;
 
-    if (forceEval == 1 && addition == 1) {
-        addTogether();
-    }
-    else if (forceEval == 1 && subtraction == 1) {
-        subtractTogether();
-    }
-    else if (forceEval == 1 && multiplication == 1) {
-        multiplyTogether();
-    }
-    else if (forceEval == 1 && division == 1) {
+    division = 1;
+    addition = 0;
+    subtraction = 0;
+    multiplication = 0;
+
+    if (forceEval == 1 && division == 1) {
         divideTogether();
     }
    
@@ -1006,6 +986,3 @@ function displayValue2(val) {
         removeDisplayNum();
         }
     }
-
-
-
