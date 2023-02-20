@@ -5,7 +5,6 @@ This is a calculator application that allows users to perform basic mathematical
 Getting Started
 To get started with the calculator application, you will need to do the following:
 
-Download or clone the repository to your local machine.
 Open this link: https://gio437.github.io/calculator/
 The calculator should appear automatically, and you will be able to perform calculations by clicking on the buttons or using your keyboard.
 
